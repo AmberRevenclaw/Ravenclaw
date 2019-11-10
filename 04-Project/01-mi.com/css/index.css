@@ -1,0 +1,90 @@
+header{
+	width: 100%;
+	background-color: #333;
+}
+header .nav{
+	float: left;
+}
+header .nav-item{
+	float: left;
+	line-height: 40px;
+}
+header .nav-item a:hover{
+	color: #fff;
+}
+header .nav .shuxian{
+	color: #423d39;
+	margin-right: 7px;
+	margin-left: 7px;
+}
+header .user-info{
+	float: right;
+	width: 160px;
+	height: 40px;
+	background-color: #ff1296;
+}
+header .cart{
+	float: right;
+	width: 120px;
+	height: 40px;
+	background-color: green;
+}
+.focus{
+	width: 100%;
+	height: 744px;
+	background-color: #fff;
+}
+.focus .title{
+	height: 100px;
+	background-color: #fff;
+}
+.focus .title .logo a{
+	float: left;
+	width: 55px;
+	height: 55px;
+	/*background-color: #000;*/
+	background-image: url(../images/LOGO-mi.png);
+	margin-top: 22px;
+}
+.focus .title .logo a:hover{
+	background-image: url(../images/LOGO-home.png);
+}
+.focus .title .focus-lis{
+	float: left;
+	margin-left: 180px;
+	line-height: 100px;
+	width: 676px;
+	/*background-color: #4880F4;*/
+}
+.focus .title .focus-lis li{
+	float: left;
+	margin-right: 20px;
+}
+.focus .title .focus-lis li:hover{
+	color: tomato;
+}
+.focus .title .search{
+	float: right;
+	width: 315px;
+	height: 100px;
+	background-color: purple;
+}
+.focus .focus-pic{
+	height: 460px;
+	background-color: tomato;
+}
+.focus .hot{
+	height: 170px;
+	background-color: #B8F622;
+	margin-top: 14px;
+}
+.main-content{
+	width: 100%;
+	height: 6009px;
+	background-color: pink;
+}
+footer{
+	width: 100%;
+	height: 522px;
+	background-color: red;
+}
