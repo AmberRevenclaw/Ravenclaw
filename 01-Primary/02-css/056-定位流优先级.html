@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>056-定位流优先级</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.box1{
+			width: 200px;
+			height: 200px;
+			background-color: yellow;
+			position: absolute;
+			top: 10px;
+			z-index: 1;
+		}
+		.box2{
+			width: 400px;
+			height: 400px;
+			background-color: skyblue;
+			position: fixed;
+			top: 10px;
+		}
+		.box3{
+			width: 600px;
+			height: 600px;
+			background-color: pink;
+		}
+	</style>
+</head>
+<body>
+	<div class="box1"></div>
+	<div class="box2"></div>
+	<div class="box3"></div>
+</body>
+</html>

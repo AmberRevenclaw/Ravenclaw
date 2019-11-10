@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>090-单页平滑页面</title>
+	<link rel="stylesheet" href="Iconfont/iconfont.css">
+	<style>
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		html,body{
+			width: 100%;
+			height: 100%;
+		}
+		.page{
+			width: 100%;
+			height: 100%;
+		}
+		.page input:checked + a{
+			color: red;
+			background-color: #474747;
+		}
+		.page input,.page a{
+			width: 20%;
+			height: 40px;
+			position: fixed;
+			top: 0px;
+			text-align: center;
+			line-height: 40px;
+			z-index: 98;
+		}
+		.page input{
+			z-index: 99;
+			opacity: 0;
+		}
+		.page input:hover +a{
+			background-color: #474747;
+		}
+		a{
+			text-decoration: none;
+			color: #fff;
+			background-color: #7e7e7e;
+			font-size: 25px;
+		}
+		.page a i{
+			font-size: 30px;
+			margin-right: 10px;
+		}
+		#home,#home+a{
+			left: 0%;
+		}
+		#service,#service+a{
+			left: 20%;
+		}
+		#about,#about+a{
+			left: 40%;
+		}
+		#team,#team+a{
+			left: 60%;
+		}
+		#contact,#contact+a{
+			left: 80%;
+		}
+		.panel{
+			margin-top: 34px;
+			height: 100%;
+			transition: all 1s;
+			/*overflow: hidden;*/
+		}
+		.page .panel .pic{
+			width: 100%;
+			height: 100%;
+		}
+		/*img{
+			width: 100%;
+			height: 100%;
+		}*/
+		#pic_home{
+			background-image: url(imgs/home.png);
+			background-repeat:no-repeat;
+			background-size: contain;
+		}
+		#pic_service{
+			background-image: url(imgs/service.png);
+			background-repeat:no-repeat;
+			background-size: contain;
+		}
+		#pic_about{
+			background-image: url(imgs/about.png);
+			background-repeat:no-repeat;
+			background-size: contain;
+		}
+		#pic_team{
+			background-image: url(imgs/team.png);
+			background-repeat:no-repeat;
+			background-size: contain;
+		}
+		#pic_contact{
+			background-image: url(imgs/contact.png);
+			background-repeat:no-repeat;
+			background-size: cover;
+		}
+		#home:checked ~.panel{
+			transform: translateY(0%);
+		}
+		#service:checked ~.panel{
+			transform: translateY(-100%);
+		}
+		#about:checked ~.panel{
+			transform: translateY(-200%);
+		}
+		#team:checked ~.panel{
+			transform: translateY(-300%);
+		}
+		#contact:checked ~.panel{
+			transform: translateY(-400%);
+		}
+		#home:checked ~.panel #pic_home{
+			animation:anima 2s;
+		}
+		#service:checked ~.panel #pic_service{
+			animation:anima 2s;
+		}
+		#about:checked ~.panel #pic_about{
+			animation:anima 2s;
+		}
+		#team:checked ~.panel #pic_team{
+			animation:anima 2s;
+		}
+		#contact:checked ~.panel #pic_contact{
+			animation:anima 2s;
+		}
+		@keyframes anima{
+			from{
+				opacity: 0;
+			}
+			to{
+				opacity: 1;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="page">
+		<input type="radio" name="tab" id="home" checked>
+		<a href="#">
+			<i class="iconfont icon-1"></i>
+			Home
+		</a>
+		<input type="radio" name="tab" id="service">
+		<a href="#">
+			<i class="iconfont icon-xiazai47"></i>
+			Service
+		</a>
+		<input type="radio" name="tab" id="about">
+		<a href="#">
+			<i class="iconfont icon-guanyu"></i>
+			About
+		</a>
+		<input type="radio" name="tab" id="team">
+		<a href="#">
+			<i class="iconfont icon-duiwu"></i>
+			Team
+		</a>
+		<input type="radio" name="tab" id="contact">
+		<a href="#">
+			<i class="iconfont icon-lianxi"></i>
+			Contact
+		</a>
+		<div class="panel">
+			<div class="pic" id="pic_home"><!-- <img src="imgs/home.png"> --></div>
+			<div class="pic" id="pic_service"><!-- <img src="imgs/service.png"> --></div>
+			<div class="pic" id="pic_about"><!-- <img src="imgs/about.png" -->></div>
+			<div class="pic" id="pic_team"><!-- <img src="imgs/team.png"> --></div>
+			<div class="pic" id="pic_contact"><!-- <img src="imgs/contact.png"> --></div>
+		</div>
+	</div>
+</body>
+</html>

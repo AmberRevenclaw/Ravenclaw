@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>066-缩放属性</title>
+	<style>
+		ul{
+			width: 800px;
+			height: 800px;
+			border:1px solid black;
+			margin:50px auto;
+		}
+		li{
+			width: 500px;
+			height: 100px;
+			background-color: pink;
+			margin-top: 100px;		
+		}
+		ul li:nth-child(2){
+			transform: scale(0.5,0.5);
+		}
+		ul li:nth-child(3){
+			transform: scale(1.5,1.5);
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li>111111</li>
+		<li>222222</li>
+		<li>333333</li>
+	</ul>
+</body>
+</html>

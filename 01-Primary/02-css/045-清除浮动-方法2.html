@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>043-浮动元素造成高度塌陷</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			font-size: 32px;
+		}
+		.father1 span{
+			background-color: red;
+			float: left;
+		}
+		.father2 span{
+			background-color: yellow;
+			float: left;
+			clear: left;
+		}
+		.father1{
+			background-color: blue;
+
+		}
+		.father2{
+			background-color: green;
+
+		}
+	</style>
+</head>
+<body>
+	<div class="father1">
+		<span>1</span>
+		<span>2</span>
+	</div>
+	<div class="father2">
+		<span>1</span>
+		<span>2</span>
+	</div>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>082-创建滚动长方体</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			perspective: 1000px;
+		}
+		ul{
+			width: 400px;
+			height: 400px;
+			margin:200px auto;
+			/*border:1px solid silver; */
+			transform-style:preserve-3d;
+			transform: rotateX(0deg) rotateY(0deg);
+			animation:anima 6s ease-in-out 0s infinite normal;
+			position: relative;
+		}
+		li{
+			width: 100%;
+			height: 100%;
+			list-style: none;
+			position: absolute;
+			font-size: 100px;
+			text-align: center;
+			line-height: 400px;
+		}
+		ul li:nth-child(1){
+			background-color: red;
+			transform: translateZ(200px) scaleX(2);
+		}
+		ul li:nth-child(2){
+			background-color: blue;
+			transform: translateY(200px) rotateX(-90deg)  scaleX(2);
+		}
+		ul li:nth-child(3){
+			background-color: orange;
+			transform: rotateY(90deg) translateZ(200px);
+		}
+		ul li:nth-child(4){
+			background-color: aqua;
+			transform: rotateX(90deg) translateZ(200px) scaleX(2);
+		}
+		ul li:nth-child(5){
+			background-color: yellow;
+			transform: rotateY(-90deg) translateZ(200px);
+		}
+		ul li:nth-child(6){
+			background-color: pink;
+			transform: translateZ(-200px) rotateX(-180deg) scaleX(2);
+		}
+		img{
+			width: 100%;
+			height: 100%;
+		}
+		@keyframes anima{
+			0%{
+				transform:rotateX(0deg);
+			}
+			25%{
+				transform:rotateX(90deg);
+			}
+			50%{
+				transform:rotateX(180deg);
+			}
+			75%{
+				transform:rotateX(270deg);
+			}
+			100%{
+				transform:rotateX(360deg);
+			}
+		}
+		ul:hover{
+			animation-play-state: paused;
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li><img src="imgs/ad1.jpg" alt=""></li>
+		<li><img src="imgs/ad2.jpg" alt=""></li>
+		<li><img src="imgs/ad3.jpg" alt=""></li>
+		<li><img src="imgs/ad4.png" alt=""></li>
+		<li><img src="imgs/ad5.jpg" alt=""></li>
+		<li><img src="imgs/ad6.jpg" alt=""></li>
+	</ul>
+</body>
+</html>

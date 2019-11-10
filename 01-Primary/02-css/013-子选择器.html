@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>013-子选择器</title>
+	<style>	
+		/*.father>div{
+			color: red;
+		}*/
+		/*.father>p{
+			color: red;
+		}*/
+		/*div>p{
+			color: red;
+		}*/
+		/*div>p{
+			color: red;
+		}*/
+/*		body>div{
+			color: red;
+		}*/
+		/*.father>p{
+			color: red;
+		}*/
+		/*div>div>div{
+			color: red;
+		}*/
+		div>div>div>p{
+			color: red;
+		}
+	</style>
+</head>
+<body>
+	<p>后代选择器</p>
+	<div class="father">
+		<div class="son">
+			<p>小米</p>
+			<div>
+				<p>精米</p>
+				玉米
+			</div>
+		</div>
+		<p>大米</p>
+	</div>
+	<div class="father">
+		<p>糙米</p>
+		<span>粗米</span>
+	</div>
+</body>
+</html>

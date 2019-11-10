@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>058-定位布局案例</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.logo1{
+			width: 43px;
+			height: 14px;
+			position: absolute;
+			top: 7px;
+			left: 930px;
+			background-image: url(ad-2.jpg);
+			background-repeat: no-repeat;
+		}
+		.top{
+			width: 1000px;
+			height: 40px;
+			background-color: #808080;
+			position: absolute;
+			top: 20px;
+			left:450px; 
+			position: relative;
+		}
+		.top div{
+			width: 200px;
+			height: 40px;
+			text-align: center;
+			line-height: 40px;
+			float: left;	
+		}
+		.top .tab1{
+			background-color: tomato;
+		}
+		.slideshow{
+			width: 833px;
+			height: 442px;
+			background-image: url(ad-1.jpg);
+			background-repeat: no-repeat;
+			position: absolute;
+			top: 80px;
+			right: 534px;
+		}
+		.content-part{
+			width: 1000px;
+			height: 3000px;
+			background-color: skyblue;
+			position: absolute;
+			top: 602px;
+			right: 447px;
+		}
+		.right-part{
+			width: 100px;
+			height: 200px;
+			background-color: #ff0000;
+			position: fixed;
+			top: 200px;
+		}
+		.left-part{
+			width: 100px;
+			height: 200px;
+			background-color: #ff0000;
+			position: fixed;
+			top: 200px;
+			right:0px;
+		}
+		.bottom{
+			width: 80px;
+			height: 80px;
+			background-color: #999999;
+			position: fixed;
+			bottom: 0px;
+			right: 0px;
+			line-height: 16px;
+		}
+		.bottom a{
+			display: block;
+			text-align: center;
+			text-decoration: none;
+			color: #5f008f;
+			position: absolute;
+			top: 31px;
+			right: 9px;
+		}
+		.bottom a:hover{
+			text-decoration: underline;
+		}
+	</style>
+</head>
+<body>
+	<div class="logo1"></div>
+	<div class="top">
+		<div>天猫会员</div>
+		<div>品牌街</div>
+		<div class="tab1">电器城</div>
+		<div>营业厅</div>
+		<div>魅力惠</div>
+	</div>
+	<div class="slideshow"></div>
+	<div class="content-part">
+		我是内容
+	</div>
+	<div class="right-part"></div>
+	<div class="left-part"></div>
+	<div class="bottom">
+		<a href="#">返回顶部</a>
+	</div>
+</body>
+</html>

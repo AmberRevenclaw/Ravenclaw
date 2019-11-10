@@ -1,0 +1,10 @@
+*.jpg
+*.png
+*.psd
+*.eot
+*.ttf
+*.woff
+*.woff2
+*.otf
+*.svg
+src/

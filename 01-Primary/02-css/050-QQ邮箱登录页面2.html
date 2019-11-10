@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>049-QQ邮箱登录页面</title>
+	<link rel="stylesheet" type="text/css" href="reset.css">
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		header{
+			width: 100%;
+			height: 63px;
+			background-color: #eff4fa;
+			border-bottom: 1px solid #d6dfea;
+			box-sizing:border-box; 
+		}
+		.header_logo{
+			width: 184px;
+			height: 36px;
+			margin-top: 13px;
+			background-image: url(mail/QQmail.jpg);
+			background-repeat: no-repeat;
+			float: left;
+		}
+		.nav_ul{
+			margin-top: 26px;
+			line-height: 13px;
+			float: right;
+		}
+		.nav_item{
+			color: #1d5494;
+			float: left;
+		}
+		header .nav_item a{
+			margin-right:5px;
+			margin-left: 5px; 			
+		}
+		section{
+			width: 100%;
+			height: 845px;
+		}
+		section .container{
+			padding:73px 458px 384px 453px;
+			box-sizing: border-box;
+		}
+		section .left_part{
+			width: 590px;
+			height: 388px;
+			background-image: url(mail/QQpic.jpg);
+			background-repeat: no-repeat;
+			float: left;
+		}
+		section .right_part{
+			width: 336px;
+			height: 388px;
+			border: 1px solid #a0b1c4;
+			border-radius: 6px;
+			float: right;
+		}
+		section .right_part .login_top{
+			width: 100%;
+			height: 52px;
+			padding-top: 19px;
+			line-height: 15px;
+			box-sizing: border-box;
+			background-color: #f9fbfe;
+			border-top-left-radius: 6px;
+			border-top-right-radius: 6px;
+			border-bottom: 1px solid #a0b1c4;
+			font-size: 15px;
+		}
+		section .right_part .login_top a{
+			width: 50%;
+			text-align: center;
+			color: #999999;
+			float: left;
+		}
+		section .right_part .login_top a.active{
+			color: #333;
+		}
+		section .right_part .login_con{
+			padding-top: 37px;
+			padding-left: 27px;
+		}
+		.login_con .login_con_tab [type=text],
+		.login_con .login_con_tab [type=password]{
+			width: 284px;
+			height: 40px;
+			padding-left:5px;
+			margin-bottom: 10px;
+			border-radius: 3px;
+		}
+		.login_con .login_autologin{
+			margin-top: 17px;
+			height: 18px;
+			font-size: 12px;
+		}
+		.login_autologin input{
+			vertical-align: middle;
+			margin-right: 5px;
+		}
+		.login_con .login_con_tab [type=button]{
+			width: 284px;
+			height: 40px;
+			background-color: #5a98de;
+			margin-top: 17px;
+			margin-bottom: 17px;
+			border-radius: 6px;
+			color: #fff;
+			font-weight: 700;
+		}
+		.login_con_tab [type=button]:hover{
+			opacity: 0.8;
+		}
+		.login_con .quicklogin{
+			display: block;
+			text-align: center;
+			font-size: 12px;	
+		}
+		.login_con .quicklogin img{
+			vertical-align:middle;
+			margin-right: 5px;
+		}
+		.forgetpassword{
+			float: right;
+			margin-top: 30px;
+			margin-right:12px;
+		}
+		footer{
+			width: 100%;
+			height:37px;
+			line-height: 37px;
+			border-top: 1px solid  #d6dfea;
+			background-color: #eff4fa;
+			font-size: 12px;
+			text-align: center;
+		}
+		.link{
+			font-size: 12px;
+			text-decoration: none;
+			color: #1d5494;	/*a标签的颜色只有直接找到它本身时才能添加*/	
+		}
+		.link:hover{
+			text-decoration: underline;
+		}
+		.container{
+			width: 1839px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		
+		
+	</style>
+</head>
+<body>
+	<header>
+		<div class="container">
+			<h1 class="header_logo">
+				<a href="javascrip"></a>
+			</h1>	
+			<ul class="nav_ul">
+				<li class="nav_item">
+					<a href="javascrip" class="link">基本版</a>&nbsp|&nbsp
+				</li>
+				<li class="nav_item">
+					<a href="javascrip" class="link">English</a>&nbsp|&nbsp
+				</li>
+				<li class="nav_item">
+					<a href="javascrip" class="link">手机版</a>&nbsp|&nbsp
+				</li>
+				<li class="nav_item">
+					<a href="javascrip" class="link">企业邮箱</a>
+				</li>
+			</ul>
+		</div>
+	</header>
+	<section>
+		<div class="container">
+			<div class="left_part"></div>			
+			<div class="right_part">
+				<div class="login_top">
+					<a href="javascrip:;">微信登录</a>
+					<a href="javascrip:;" class="active">QQ登录</a>
+				</div>
+				<div class="login_con">
+					<div class="login_con_tab">
+						<input type="text" placeholder="支持QQ号/邮箱/手机号登录">
+					</div>
+					<div class="login_con_tab">
+						<input type="password" placeholder="QQ密码"> 
+					</div>
+					<div class="login_autologin">
+						<input type="checkbox" id="auto_login">
+						<label for="auto_login">下次自动登录</label>
+					</div>
+					<div class="login_con_tab">
+						<input type="button" value="登录">
+					</div>
+					<div class="quicklogin">
+						<a href="javascrip:;" class="link">
+							<img src="mail/login1.jpg">扫码快捷登录
+						</a>
+					</div>
+					<div class="forgetpassword">
+						<a href="javascrip:;" class="link">忘了密码？</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<footer>
+		<div class="container">
+			<a href="javascrip:;" class="link">关于腾讯</a>&nbsp|&nbsp
+			<a href="javascrip:;" class="link">服务条款</a>&nbsp|&nbsp
+			<a href="javascrip:;" class="link">隐私政策</a>&nbsp|&nbsp
+			<a href="javascrip:;" class="link">客服中心</a>&nbsp|&nbsp
+			<a href="javascrip:;" class="link">联系我们</a>&nbsp|&nbsp
+			<a href="javascrip:;" class="link">帮助中心</a>
+			©1998 - 2019 Tencent Inc. All Rights Reserved.
+		</div>
+	</footer>
+</body>
+</html>

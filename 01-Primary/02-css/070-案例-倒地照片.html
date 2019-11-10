@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>070-倒地照片</title>
+	<style>
+		.box{
+			width: 500px;
+			height: 621px;
+			border:1px solid black;
+			border-radius: 5px;
+			margin:200px auto;
+			perspective:800px;	
+		}
+		img{
+			transition-property: transform;
+			transition-duration:3s;
+			border-radius: 5px;
+			transform-origin: bottom center;
+		}
+		div:hover img{
+			transform: rotateX(70deg);
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<img src="imgs/kb.jpg" alt="切爆szd">
+	</div>
+</body>
+</html>

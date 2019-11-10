@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>078-3D效果</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.father{
+			width: 400px;
+			height: 400px;
+			background-color: maroon;
+			margin:200px auto;
+			border:1px solid maroon;
+			transform-style:preserve-3d; 
+			transform: rotateY(45deg);
+			perspective: 800px;
+		}
+		.son{
+			width: 200px;
+			height: 200px;
+			background-color: silver;
+			margin:100px auto;
+			transform: rotateY(45deg);
+			
+		}
+	</style>
+</head>
+<body>
+	<div class="father">
+		<div class="son">
+		</div>
+	</div>
+</body>
+</html>

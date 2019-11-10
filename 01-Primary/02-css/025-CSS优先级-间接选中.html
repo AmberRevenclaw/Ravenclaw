@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>025-CSS优先级-间接选中</title>
+	<style>
+		li p{
+			color: blue;
+		}
+		ul p{
+			color: red;
+		}
+	</style>
+</head>
+<body>	
+	<p>这是自然段1</p>
+	<p>这是自然段2</p>
+	<div>
+		<ul>
+			<li>
+				<p>这是自然段3</p>
+			</li>
+			<li>这是自然段4</li>
+			<li>这是自然段5</li>
+		</ul>
+	</div>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>034-百度新闻案例</title>
+	<link rel="stylesheet" type="text/css" href="reset.css">
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.news{
+			width:290px; 
+			margin:50px auto;
+			border-top:2px solid #c7c7c7;
+			font-size: 20px;
+		}
+		.news-hd{
+			width: 290px;
+			border-bottom: 1px solid #ececec;
+			margin-top: -2px;
+			line-height: 30px;
+		}
+		h3{
+			color: #069;
+			width: 80px;
+			border-top: 2px solid #069;
+		}
+		div span{
+			display: block;
+			color: #999;
+			font-size: 13px;
+			margin-top: -6px;
+		}
+		.news-lis ul li{
+			width: 290px;
+			height: 35px;
+			border-bottom: 1px dotted #ececec;
+			line-height: 35px;
+			font-size: 12px;
+			overflow: hidden;
+			white-space: nowrap;
+			text-overflow: clip;
+		}
+		.news-lis ul li:last-child{
+			border-bottom: none;
+		}
+		ul li:hover a{
+			text-decoration: underline;
+			color: #900;
+
+		}
+		ul li:before{
+			display: inline-block;
+			width: 4px;
+			height: 4px;
+			background-color: #069;
+			content:'';
+			vertical-align:middle;
+			margin-right: 7px;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="news">
+		<div class="news-hd">
+			<h3>电影</h3>
+			<span>MOVIES</span>
+		</div>
+		<div class="news-lis">
+			<ul>
+				<li><a href="#" target="_blank">上映3天揽下近6亿票房！《少年的你》有没有那么好？</a></li>
+				<li><a href="#" target="_blank">《小丑》超越《死侍2》成R级电影全球票房冠军</a></li>
+				<li><a href="#" target="_blank">《小丑》打破R级电影全球票房纪录, “死侍”发来贺电</a></li>
+				<li><a href="#" target="_blank">周冬雨VS易烊千玺：每个眼神、每滴泪水都呈现了最好的演技</a></li>
+				<li><a href="#" target="_blank">电影推动科幻文化从小众走向大众</a></li>
+				<li><a href="#" target="_blank">国产片年度最疼：易烊千玺的眼泪</a></li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

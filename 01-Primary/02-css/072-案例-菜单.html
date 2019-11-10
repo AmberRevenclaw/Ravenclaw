@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>072-案例-菜单</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		li{
+			list-style: none;
+		}
+		.content1{
+			width: 500px;
+			height: 640px;
+			background-color: skyblue;
+		}
+		.box{
+			width: 500px;
+			height: 700px;
+			border:1px solid black;
+			margin:100px auto;
+		}
+		.hd{
+			width: 100%;
+			height: 60px;
+			background-color: grey;
+		}
+		.hd>li{
+			width: 100px;
+			height: 60px;
+			line-height: 60px;
+			margin-left: 50px;
+			background-color: yellow;
+			float: left;
+			text-align: center;
+		}
+		.item{
+			opacity: 0;
+			background-color: pink;
+			transform: rotateY(180deg);
+			transition: all 1s;
+		}
+		.hd>li .item:nth-child(1){
+			transition-delay: 1s;
+		}
+		.hd>li .item:nth-child(2){
+			transition-delay: 750ms;
+		}
+		.hd>li .item:nth-child(3){
+			transition-delay: 500ms;
+		}
+		.hd>li .item:nth-child(4){
+			transition-delay: 250ms;
+		}
+		.hd>li:hover .item{
+			opacity: 1;
+			transform: rotateY(0deg);
+		}
+		.hd>li:hover .item:nth-child(1){
+			transition-delay: 250ms;
+		}
+		.hd>li:hover .item:nth-child(2){
+			transition-delay: 500ms;
+		}
+		.hd>li:hover .item:nth-child(3){
+			transition-delay: 750ms;
+		}
+		.hd>li:hover .item:nth-child(4){
+			transition-delay: 1s;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<ul class="hd">
+			<li>一级菜单1
+				<ul>
+					<li class="item">二级菜单1</li>
+					<li class="item">二级菜单2</li>
+					<li class="item">二级菜单3</li>
+					<li class="item">二级菜单4</li>		
+				</ul>
+			</li>
+			<li>一级菜单2
+				<ul>
+					<li class="item">二级菜单1</li>
+					<li class="item">二级菜单2</li>
+					<li class="item">二级菜单3</li>
+					<li class="item">二级菜单4</li>		
+				</ul>
+			</li>
+			<li>一级菜单3
+				<ul>
+					<li class="item">二级菜单1</li>
+					<li class="item">二级菜单2</li>
+					<li class="item">二级菜单3</li>
+					<li class="item">二级菜单4</li>		
+				</ul>
+			</li>
+		</ul>
+		<div class="content1">
+			<p>我是内容我是内容我是内容</p>
+		</div>
+	</div>
+</body>
+</html>

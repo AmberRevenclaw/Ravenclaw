@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>057-定位流父级优先级</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.box1{
+			width: 600px;
+			height: 600px;
+			background-color: green;
+		}
+		.box2{
+			width: 600px;
+			height: 600px;
+			background-color: skyblue;
+		}
+		.box3{
+			width: 600px;
+			height: 600px;
+			background-color: pink;
+		}
+		.son1{
+			width: 100px;
+			height: 100px;
+			background-color: grey;
+		}
+		.son2{
+			width: 100px;
+			height: 100px;
+			background-color: grey;
+		}
+		.son3{
+			width: 100px;
+			height: 100px;
+			background-color: grey;
+		}
+	</style>
+</head>
+<body>
+	<div class="box1">
+		<div class="son1"></div>
+	</div>
+	<div class="box2">
+		<div class="son2"></div>
+	</div>
+	<div class="box3">
+		<div class="son3"></div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>053-元素绝对定位-2</title>
+	<style>
+		.father1{
+			width: 400px;
+			height: 400px;
+			background-color: yellow;
+			position: absolute;
+			top: 50px;
+			left: 50px;
+		}
+		.son1{
+			width: 200px;
+			height: 200px;
+			background-color: blue;
+			/*position: relative;*/
+			position: absolute;
+			top: 50%;
+			left: 50%;
+		}
+		span{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+			position:absolute;/*绝对定位脱离标准流，不再区分行内块状元素等*/
+			top:50%;
+			left:50%;
+		}
+	</style>
+</head>
+<body>
+	<div class="father1">
+		<div class="son1">
+			<span>span</span>
+		</div>
+	</div>
+</body>
+</html>

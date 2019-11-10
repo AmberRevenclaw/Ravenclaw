@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>077-滚动图片</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.box{
+			width: 830px;
+			height: 440px;
+			border:3px solid teal;
+			margin: 150px auto;
+			overflow: hidden;
+		}
+		ul{
+			width: 4980px;
+			animation:push 10s linear 0s infinite normal;
+			position: relative ;
+		}
+		li{
+			float: left;
+			list-style: none;
+		}
+		.box:hover ul{
+			animation-play-state: paused;
+			opacity: 0.5;
+		}
+		.box ul li:hover {
+			opacity: 1;
+		} 
+		@keyframes push{
+			from{
+				right: 0px;
+			}
+			to{
+				right: 4150px;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<ul>
+			<li><img src="imgs/ad1.jpg" alt="ad1"></li>
+			<li><img src="imgs/ad2.jpg" alt="ad2"></li>
+			<li><img src="imgs/ad3.jpg" alt="ad3"></li>
+			<li><img src="imgs/ad4.png" alt="ad4"></li>
+			<li><img src="imgs/ad5.jpg" alt="ad5"></li>
+			<li><img src="imgs/ad1.jpg" alt="ad1"></li>
+		</ul>
+	</div>
+</body>
+</html>

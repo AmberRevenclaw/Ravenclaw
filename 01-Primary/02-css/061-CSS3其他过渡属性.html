@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>061-CSS3其他过渡属性</title>
+	<style>
+		.box{
+			width: 700px;
+			height: 600px;
+			border:3px solid black;
+			margin:60px auto;
+		}
+		ul{
+			margin-top: 10px;
+			font-size: 20px;
+		}
+		li{
+			list-style: none;
+			width: 150px;
+			margin-top: 20px;
+			background-color: pink;
+			transition-property: margin-left;
+			transition-duration: 1s;
+		}
+		.box li:nth-child(2){
+			transition-timing-function: linear;
+		}
+		.box li:nth-child(3){
+			transition-timing-function:ease-in;
+		}
+		.box li:nth-child(4){
+			transition-timing-function:ease-out;
+		}
+		.box li:nth-child(5){
+			transition-timing-function:ease-in-out;
+		}
+		.box li:nth-child(5){
+			transition-timing-function:cubic-bezier(0,0,10,10);
+		}
+		.box:hover li{
+			margin-left: 500px;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<ul>
+			<li>ease 默认的</li>
+			<li>linear</li>
+			<li>ease-in</li>
+			<li>ease-out</li>
+			<li>ease-in-out</li>
+			<li>cubic-bezier</li>
+		</ul>
+	</div>
+</body>
+</html>

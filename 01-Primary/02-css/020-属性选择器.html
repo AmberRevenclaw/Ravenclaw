@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>020-属性选择器</title>
+	<style>
+		/*[title]{
+			color: red;
+		}*/
+		/*[title=kuazhu]
+		{
+			color: red;
+		}*/
+		/*[title|=kuazhu]
+		{
+			color: red;
+		}*/
+		/*[title^=kuazhu]
+		{
+			color: red;
+		}*/
+		/*[title$=com]
+		{
+			color: red;
+		}*/
+		/*[title~=kuazhu]
+		{
+			color: red;
+		}*/
+		[title*=www]
+		{
+			color: red;
+		}
+	</style>
+</head>
+<body>
+	<a href="#" title="kuazhu">kuazhu=' '</a><br>
+	<a href="#" title="kuazhu.com">kuazhu.com</a><br>
+	<a href="#" title="www.kuazhu">www.kuazhu</a><br>
+	<a href="#" title="kuazhu com">kuazhu com</a><br>
+	<a href="#" title="kuazhu-com<">kuazhu-com</a><br>
+	<a href="#" title="www.kuazhu.com">www.kuazhu.com</a><br>
+	<a href="#" title="www-kuazhu.com">www-kuazhu.com</a><br>
+</body>
+</html>

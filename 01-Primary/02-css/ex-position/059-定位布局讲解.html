@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>058-定位布局案例</title>
+	<link rel="stylesheet" href="../reset.css">
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.contanier{
+			margin-left: auto;
+			margin-right: auto;
+		}
+		.nav-list{
+			background-color: #808080;
+			position:fixed;
+			top: 20px;
+			left: 50%;
+			margin-left:-500px;
+		}
+		.nav-item{
+			float: left;
+			height: 40px;
+			width: 200px;
+			text-align: center;
+			line-height: 50px;
+		}
+		.content-part{
+			width: 1000px;
+			height: 3000px;
+			background-color: pink;
+		}
+		.slideshow{
+			width: 833px;
+			height: 442px;
+			background-image: url(iiiad-1.jpg);
+			background-repeat: no-repeat;
+			position:absolute;
+			top:80px;
+			left: 50%;
+			margin-left: 500px; 
+		}
+	</style>
+</head>
+<body>
+	<div class="nav-list contanier">
+		<ul>
+			<li class="nav-item">天猫会员</li>
+			<li class="nav-item">品牌街</li>
+			<li class="nav-item">电器城</li>
+			<li class="nav-item">营业厅</li>
+			<li class="nav-item">魅力惠</li>
+		</ul>
+	</div>
+	<div class="slideshow contanier"></div>
+	<div class="content-part contanier">
+		<div class="text">
+			我是内容
+		</div>
+	</div>
+	<div class="right-part"></div>
+	<div class="left-part"></div>
+	<div class="bottom contanier">
+		<a href="#">返回顶部</a>
+	</div>
+</body>
+</html>

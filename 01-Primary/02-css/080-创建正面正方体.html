@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>080-创建正面正方体</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.father{
+			width: 200px;
+			height: 200px;
+			margin:100px auto;
+			border:1px solid silver; 
+			transform-style:preserve-3d;
+			transform: rotateX(0deg) rotateY(-152deg);
+		}
+		ul{
+			/*perspective: 800px;*/
+			position: relative;
+			transform-style:preserve-3d;
+		}
+		li{
+			width: 200px;
+			height: 200px;
+			list-style: none;
+			position: absolute;
+			font-size: 100px;
+			text-align: center;
+			line-height: 200px;
+		}
+		ul li:nth-child(1){
+			background-color: red;
+			transform: translateZ(100px);
+		}
+		ul li:nth-child(2){
+			background-color: blue;
+			transform: translateY(100px) rotateX(-90deg);
+		}
+		ul li:nth-child(3){
+			background-color: orange;
+			transform: rotateY(90deg) translateZ(100px);
+		}
+		ul li:nth-child(4){
+			background-color: aqua;
+			transform: rotateX(90deg) translateZ(100px);
+		}
+		ul li:nth-child(5){
+			background-color: yellow;
+			transform: rotateY(-90deg) translateZ(100px);
+		}
+		ul li:nth-child(6){
+			background-color: pink;
+			transform: translateZ(-100px) rotateX(-180deg) rotateZ(180deg);
+		}
+	</style>
+</head>
+<body>
+	<div class="father">
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+		</ul>
+	</div>
+</body>
+</html>

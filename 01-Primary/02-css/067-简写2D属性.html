@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>067-简写2D属性</title>
+	<style>
+		ul{
+			width: 800px;
+			border:1px solid black;
+			margin:50px auto;
+		}
+		li{
+			width: 200px;
+			height: 200px;
+			background-color: pink;
+			margin-top: 100px;		
+		}
+		ul li:nth-child(2){
+			transform: rotate(45deg); translate(50px,50px) scale(0.5,0.5);
+		}
+		ul li:nth-child(3){
+			transform: rotate(45deg); translate(100px,50px) scale(0.5,0.5);
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li>111111</li>
+		<li>222222</li>
+		<li>333333</li>
+	</ul>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>027-CSS优先级-多个直接选中</title>
+	<style>
+		 div p{
+		 	color: red;
+		 }
+		 p{
+		 	color: blue;
+		 }
+		 .index{
+		 	color: green;
+		 }
+		 #only1 .index{
+		 	color: orange;
+		 }
+
+	</style>
+</head>
+<body>
+	<div>
+		<p>我是自然段1</p>
+		<p id="only2" class="index">我是自然段2</p>
+		<ul>
+			<li>我是序列1</li>
+			<li>
+				<ul>
+					<li><p class="index" id="only1">我是序列2</p></li>
+					<li>我是序列3</li>
+				</ul>
+			</li>
+			<li>我是序列4</li>
+		</ul>
+		<p>我是自然段3</p>
+		<p>我是自然段4</p>
+	</div>
+</body>	
+</html>

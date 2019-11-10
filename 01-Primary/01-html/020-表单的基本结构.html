@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>020-表单的基本结构</title>
+	<style type="text/css">
+		textarea{resize: none;}
+	</style>
+</head>
+<body>
+	<h1>用户注册表</h1>
+	<form action="https://www.kuazhu.com" method="get">
+		<p>
+			<label for="username">用户名：</label>
+			<input type="text" name="username" placeholder="请输入你的用户名" id="username" autocomplete="off">
+			<!--autocomplete关闭则不会自动补全输入内容-->
+		</p>
+		<p>
+			<label for="password">密码：</label>
+			<input type="password" name="password" placeholder="*****" id="password">
+		</p>
+		<!--label属性和input输入框绑定，点击label会自动锁定对应输入框输入-->
+		<p>
+			性别：<input type="radio" name="sex" value="secret" checked="checked">保密
+				<input type="radio" name="sex" value="male">男
+				<input type="radio" name="sex" value="female">女
+				<!--radio属性天生不互斥，但若拥有相同name属性则选项互斥-->
+		</p>
+		<p>
+			年龄：<input type="number" name="age">
+		</p>
+		<p>
+			出生日期：<input type="date" name="birthday">
+		</p>
+		<p>
+			地址：<select name="city">
+				<optgroup label="直辖市">
+					<option value="bj" selected="selected">北京</option>
+					<!--默认选项锁定selected-->
+					<option value="sh">上海</option>
+					<option value="nj">南京</option>
+					<option value="tj">天津</option>
+				</optgroup>
+				<optgroup label="省份">
+					<option value="hun">湖南省</option>
+					<option value="hen">河南省</option>
+				</optgroup>
+			</select>
+		</p>
+		<p>
+			爱好:<input type="checkbox" name="interset" value="sports">运动
+				<input type="checkbox" name="interset" value="reading">阅读
+				<input type="checkbox" name="interset" value="movie">影视
+				<input type="checkbox" name="interset" value="game">游戏
+				<input type="checkbox" name="interset" value="comic">动漫
+				<input type="checkbox" name="interset" value="popstars">明星
+		</p>
+		<p>
+			喜欢的颜色：<input type="color" name="color">
+		</p>
+		<p>
+			邮箱：<input type="email" name="email">
+		</p>
+		<p>
+			<input type="hidden" name="toutou" value="隐藏数据">
+		</p>
+		<p>
+			上传文件：<input type="file" name="file">
+		</p>
+		<p>
+			<input type="button" value="按钮">
+			<input type="submit" value="提交">
+			<input type="reset" value="重置">
+			<input type="image" src="good.jpg">
+		</p>
+		<p>
+			留言：<textarea name="intro" id="intro" cols="40" rows="10"></textarea>
+			<!--禁止拉伸样式在CSS样式中-->
+		</p>
+	</form>
+</body>
+</html>

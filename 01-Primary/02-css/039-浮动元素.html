@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>039-浮动元素</title>
+	<style>
+		.father{
+			width: 400px;
+			height: 300px;
+			border:5px solid black;
+			padding: 50px;
+			background-color: yellow;
+			margin: 100px auto;
+		}
+		.father2{
+			width: 400px;
+			height: 300px;
+			border:5px solid black;
+			padding: 50px;
+			background-color: green;
+			margin: 100px auto;
+		}
+		.son1{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+			float: left;
+		}
+		.son2{
+			width: 100px;
+			height: 100px;
+			background-color: blue;
+			float: right;
+		}
+		.son3{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+			display: inline-block;
+		}
+		.son4{
+			width: 100px;
+			height: 100px;
+			background-color: blue;
+			margin-left: 200px;
+			display: inline-block;
+		}
+	</style>
+</head>
+<body>
+	<div class="father">
+		<div class="son1"></div>
+		<div class="son2"></div>
+	</div>
+	<div class="father2">
+		<div class="son3"></div><div class="son4"></div>
+	</div>
+</body>
+</html>

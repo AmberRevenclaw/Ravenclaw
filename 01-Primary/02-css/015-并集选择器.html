@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>015-并集选择器</title>
+	<style>
+		/*h1,p,span,div{
+			color: red;
+		}*/
+		/*p,.text1{
+			color: green;
+
+		}*/
+		p.text1,p.text2{
+			color: yellow;
+		}
+		.text1,.text2{
+			background-color: gray;
+		}
+		div>p,h1{
+			color: red;
+		}
+	</style>
+</head>
+<body>
+	<h1>我是标题</h1>
+	<p>我是自然段</p>
+	<span>我是span</span>
+	<div>我是div</div>
+	<p class="text1">小明</p>
+	<div class="text1">小红</div>
+	<p class="text2">小黄</p>
+	<div>
+		<div>
+			不瞒你说
+		</div>
+		<p>这是一条很重要的消息</p>
+	</div>
+</body>
+</html>

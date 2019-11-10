@@ -1,0 +1,44 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "720987",
+      "name": "咖啡",
+      "font_class": "xiazai47",
+      "unicode": "e61c",
+      "unicode_decimal": 58908
+    },
+    {
+      "icon_id": "1177776",
+      "name": "联系",
+      "font_class": "lianxi",
+      "unicode": "e649",
+      "unicode_decimal": 58953
+    },
+    {
+      "icon_id": "4237380",
+      "name": "队伍",
+      "font_class": "duiwu",
+      "unicode": "e62e",
+      "unicode_decimal": 58926
+    },
+    {
+      "icon_id": "6684326",
+      "name": "关于",
+      "font_class": "guanyu",
+      "unicode": "e641",
+      "unicode_decimal": 58945
+    },
+    {
+      "icon_id": "11124956",
+      "name": "首页",
+      "font_class": "1",
+      "unicode": "e613",
+      "unicode_decimal": 58899
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>017-通用兄弟选择器</title>
+	<style>
+		.li3~li{
+			color: green;
+		}
+		.p3~p{
+			color：red；
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li>p1</li>
+		<li>p2</li>
+		<li class="li3">p3</li>
+		<li>p4我应该是绿色</li>
+		<li>p5我也应该是绿色</li>
+	</ul>
+		<p>自然段1</p>
+		<p>自然段2</p>
+		<p class="p3">自然段3</p>
+		<p>自然段4，我应该是红色</p>
+		<p>自然段5</p>
+</body>
+</html>
