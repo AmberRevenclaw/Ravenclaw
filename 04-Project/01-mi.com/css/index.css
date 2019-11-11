@@ -112,6 +112,7 @@ header .cart:hover{
 .focus .focus-pic{
 	height: 460px;
 	background: url(../images/carouse.jpg) no-repeat;
+	background-size: 1226px 460px;
 }
 .focus .focus-pic ul{
 	width: 234px;
@@ -141,29 +142,40 @@ header .cart:hover{
 	height: 170px;
 	background-color: #5f5750;
 }
-.focus .hot .hot2{
+.focus .hot .hot1 .hot1-item{
+	width: 78px;
+	height: 84px;
 	float: left;
-	width: 316px;
-	height: 170px;
-	margin-left: 14px;
-	background: url(../images/rexiao-1.jpg) no-repeat;
-	background-size: 316px 170px;
+	text-align: center;
+	position: relative;
+	top: 20px;
 }
-.focus .hot .hot3{
-	float: left;
-	width: 316px;
-	height: 170px;
-	margin-left: 14px;
-	background: url(../images/rexiao-2.jpg) no-repeat;
-	background-size: 316px 170px;
+.focus .hot .hot1 .hot1-item:after{
+	content: '';
+	position: absolute;
+	right: 1px;
+	top: -20px;
+	width: 1px;
+	height: 70px;
+	background-color: #665e57;
 }
-.focus .hot .hot4{
+.focus .hot .hot1 .hot1-item:before{
+	content: '';
+	position: absolute;
+	top: 57px;
+	right: 8px;
+	width: 65px;
+	height: 1px;
+	background-color: #665e57;
+}
+.focus .hot .hot1 i{
+	font-size: 25px;
+}
+.focus .hot .hot-product{
 	float: left;
 	width: 316px;
 	height: 170px;
 	margin-left: 14px;
-	background: url(../images/rexiao3.jpg) no-repeat;
-	background-size: 316px 170px;
 }
 .main-content{
 	width: 100%;
