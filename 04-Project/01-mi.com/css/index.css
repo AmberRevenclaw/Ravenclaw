@@ -12,7 +12,7 @@ header .nav-item{
 header .nav-item a:hover{
 	color: #fff;
 }
-header .nav .shuxian{
+header .shuxian{
 	color: #423d39;
 	margin-right: 7px;
 	margin-left: 7px;
@@ -20,14 +20,25 @@ header .nav .shuxian{
 header .user-info{
 	float: right;
 	width: 160px;
-	height: 40px;
-	background-color: #ff1296;
 }
 header .cart{
 	float: right;
 	width: 120px;
 	height: 40px;
-	background-color: green;
+	line-height: 40px;
+	color: #b0b0b0;
+	font-size: 12px;
+	background-color: #424242;
+	text-align: center;
+}
+header .cart i{
+	font-size: 20px;
+	vertical-align: -1px;
+	margin-right: 5px;
+}
+header .cart:hover{
+	background-color: #fff;
+	color: #ff6700;
 }
 .focus{
 	width: 100%;
