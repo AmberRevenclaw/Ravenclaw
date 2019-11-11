@@ -1,3 +1,4 @@
+/*头部标题*/
 header{
 	width: 100%;
 	background-color: #333;
@@ -40,6 +41,7 @@ header .cart:hover{
 	background-color: #fff;
 	color: #ff6700;
 }
+/*焦点轮播图部分*/
 .focus{
 	width: 100%;
 	height: 744px;
@@ -111,20 +113,25 @@ header .cart:hover{
 
 .focus .focus-pic{
 	height: 460px;
+	position: relative;
 }
-.focus .focus-pic .slideshow{
-	float: left;
-}
-.focus .focus-pic .slideshow img{
-	width: 992px;
+.focus .focus-pic img{
+	width: 1226px;
 	height: 460px;
+	position: absolute;
+	top: 0px;
+	right: 0px;
 }
-.focus .focus-pic ul{
-	float: left;
+.focus .focus-pic .focus-lis{
+	position: absolute;
+	top: 0px;
+	left: 0px;
 	width: 234px;
 	padding-top:20px;
 	padding-bottom:20px;
-	background-color: #9e9b9e;
+	/*background-color: #9e9b9e;*/
+	background: rgba(105,101,101,0.5);
+	z-index: 100;
 }
 .focus .focus-pic i{
 	float: right;
@@ -186,11 +193,13 @@ header .cart:hover{
 	height: 170px;
 	margin-left: 14px;
 }
+/*页面主体*/
 .main-content{
 	width: 100%;
 	height: 6009px;
 	background-color: pink;
 }
+/*页面底部*/
 footer{
 	width: 100%;
 	height: 522px;
