@@ -72,22 +72,98 @@ header .cart:hover{
 	margin-right: 20px;
 }
 .focus .title .focus-lis li:hover{
-	color: tomato;
+	color: #ff6700;
 }
 .focus .title .search{
 	float: right;
 	width: 315px;
 	height: 100px;
-	background-color: purple;
 }
+.focus .title .search input{
+	float: right;
+	width: 209px;
+	height: 50px;
+	position: relative;
+	bottom: -25px;
+	right: -25px;
+}
+.focus .title .search input:active{
+	border-top: 1px solid  #ff6700;
+}
+.focus .title .search .search_icon{
+	float: right;
+	height: 50px;
+	width: 50px;
+	line-height: 50px;
+	margin: 25px;
+	font-size: 20px;
+	text-align: center;
+	background-color: #fff;
+	border-right: 1px solid #e0e0e0;
+	border-bottom: 1px solid #e0e0e0;
+	border-top: 1px solid #e0e0e0;
+}
+.focus .title .search .search_icon:hover{
+	background-color: #ff6700;
+	border-top: 1px solid  #ff6700;
+	color: #fff;
+}
+
 .focus .focus-pic{
 	height: 460px;
-	background-color: tomato;
+	background: url(../images/carouse.jpg) no-repeat;
+}
+.focus .focus-pic ul{
+	width: 234px;
+	padding-top:20px;
+	padding-bottom:20px;
+	background-color: #9e9b9e;
+}
+.focus .focus-pic i{
+	float: right;
+	padding-right: 20px;
+}
+.focus .focus-pic .focus-lis-item{
+	color: #fff;
+	font-size: 15px;
+	line-height: 42px;
+	padding-left:30px; 
+}
+.focus .focus-pic .focus-lis-item:hover{
+	background-color: #ff6700;
 }
 .focus .hot{
-	height: 170px;
-	background-color: #B8F622;
 	margin-top: 14px;
+}
+.focus .hot .hot1{
+	float: left;
+	width: 234px;
+	height: 170px;
+	background-color: #5f5750;
+}
+.focus .hot .hot2{
+	float: left;
+	width: 316px;
+	height: 170px;
+	margin-left: 14px;
+	background: url(../images/rexiao-1.jpg) no-repeat;
+	background-size: 316px 170px;
+}
+.focus .hot .hot3{
+	float: left;
+	width: 316px;
+	height: 170px;
+	margin-left: 14px;
+	background: url(../images/rexiao-2.jpg) no-repeat;
+	background-size: 316px 170px;
+}
+.focus .hot .hot4{
+	float: left;
+	width: 316px;
+	height: 170px;
+	margin-left: 14px;
+	background: url(../images/rexiao3.jpg) no-repeat;
+	background-size: 316px 170px;
 }
 .main-content{
 	width: 100%;
