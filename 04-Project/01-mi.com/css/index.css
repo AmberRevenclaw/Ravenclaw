@@ -111,10 +111,16 @@ header .cart:hover{
 
 .focus .focus-pic{
 	height: 460px;
-	background: url(../images/carouse.jpg) no-repeat;
-	background-size: 1226px 460px;
+}
+.focus .focus-pic .slideshow{
+	float: left;
+}
+.focus .focus-pic .slideshow img{
+	width: 992px;
+	height: 460px;
 }
 .focus .focus-pic ul{
+	float: left;
 	width: 234px;
 	padding-top:20px;
 	padding-bottom:20px;
@@ -150,19 +156,22 @@ header .cart:hover{
 	position: relative;
 	top: 20px;
 }
+.focus .hot .hot1 a:hover{
+	color: #fff;
+}
 .focus .hot .hot1 .hot1-item:after{
 	content: '';
 	position: absolute;
 	right: 1px;
-	top: -20px;
+	top: -11px;
 	width: 1px;
 	height: 70px;
 	background-color: #665e57;
 }
-.focus .hot .hot1 .hot1-item:before{
+.focus .hot .hot1 .hot1-item-henxian:before{
 	content: '';
 	position: absolute;
-	top: 57px;
+	top: 64px;
 	right: 8px;
 	width: 65px;
 	height: 1px;
