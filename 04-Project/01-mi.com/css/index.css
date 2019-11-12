@@ -304,7 +304,6 @@ header .cart:hover{
 .main-content .flash{
 	margin-top: 26px;
 	height: 402px;
-	background-color: pink;
 }
 .flash .hd .move{
 	display: block;
@@ -320,6 +319,18 @@ header .cart:hover{
 .main-content .flash .hd .move a{
 	line-height: 24px;
 	color: #b0b0b4;
+}
+.main-content .flash .flash-timer{
+	float: left;
+	width: 234px;
+	height: 340px;
+	background-color: #f1eded;
+}
+.main-content .flash .flash-product{
+	float: right;
+	width: 978px;
+	height: 340px;
+	background-color: tomato;
 }
 /*页面底部*/
 footer{
