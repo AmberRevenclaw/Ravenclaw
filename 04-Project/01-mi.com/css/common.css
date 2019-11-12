@@ -18,3 +18,16 @@ a{
 .clearfix{
 	*zoom: 1;
 }
+h2{
+	float: left;
+	line-height: 62px;
+	color: #333;
+	font-weight: lighter;
+}
+.main-content .hd{
+	height: 62px;
+	background-color: #f5f5f5;
+}
+.more{
+	float: right;
+}

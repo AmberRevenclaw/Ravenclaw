@@ -247,7 +247,10 @@ header .cart:hover{
 .focus .hot{
 	margin-top: 14px;
 }
-.focus .hot .hot1{
+.focus .hot .hot-left{
+	height: 170px;
+}
+/*.focus .hot .hot1{
 	float: left;
 	width: 234px;
 	height: 170px;
@@ -281,45 +284,12 @@ header .cart:hover{
 	width: 65px;
 	height: 1px;
 	background-color: #665e57;
-}
-.focus .hot .hot1 i{
-	font-size: 25px;
-}
-.focus .hot .hot-item{
-	float: left;
-	width: 316px;
-	height: 170px;
-	margin-left: 14px;
-}
-.focus .hot .hot-item img{
-	width: 100%;
-	height: 100%;
-}
+}*/
 /*页面主体*/
 .main-content{
 	width: 100%;
 	height: 6009px;
 	background-color: #f5f5f5;
-}
-.main-content .flash{
-	margin-top: 26px;
-	height: 402px;
-	background-color: pink;
-}
-.flash .hd .move{
-	display: block;
-	float: left;
-	margin-top: 28px;
-	text-align: center;
-	width: 36px;
-	border: 1px solid #b0b0b4;
-}
-.flash .hd .move-r{
-	border-left: none;
-}
-.main-content .flash .hd .move a{
-	line-height: 24px;
-	color: #b0b0b4;
 }
 /*页面底部*/
 footer{
