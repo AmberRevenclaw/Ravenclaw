@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>006-js的外部引用</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			margin-left: auto;
+			margin-right: auto;
+			width: 300px;
+			height: 300px;
+			background-color: pink;
+		}
+		p{
+			text-align: center;
+		}
+	</style>
+	
+</head>
+<body>
+		<div id="box" onmouseover="toBig()" onmouseout="toSmall()"></div>
+		<p id="boxtext">古娜拉黑暗之神，呜呼啦呼变大变小</p>
+		<script src="js/js01-box.js"></script>
+</body>
+</html>
