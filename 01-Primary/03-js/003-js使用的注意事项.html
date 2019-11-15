@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>003-js使用的注意事项</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 300px;
+			height: 300px;
+			border:1px solid black;
+		}
+		.box{
+			background-color: pink;
+		}
+	</style>
+</head>
+<body>
+	<input type="text" value="请输入你的用户名" id="input">
+	<button onclick="document.getElementById('input').value='Please enter your username'">触发事件</button>
+	<div id="box">123</div>
+	<button onclick="document.getElementById('box').className='box'">触发div事件</button>
+</body>
+</html>
