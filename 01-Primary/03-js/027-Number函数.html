@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>027-Number函数</title>
+</head>
+<body>
+</body>
+<script>
+	var a = '1';
+	var b = Number(a);
+	console.log('数字',b);
+	var a = '1.333';
+	var b = Number(a);
+	console.log('小数点数字',b);
+	var a = '   ';
+	var b = Number(a);
+	console.log('空格',b);
+	var a = 'j1128';
+	var b = Number(a);
+	console.log('带字母-首',b);
+	var a = '11j28';
+	var b = Number(a);
+	console.log('带字母',b);
+	var a = true;
+	var b = Number(a);
+	console.log('True',b);
+	var a = false;
+	var b = Number(a);
+	console.log('False',b);
+	var a = null;
+	var b = Number(a);
+	console.log('null',b);
+</script>
+</html>

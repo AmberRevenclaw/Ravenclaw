@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>026-数据类型转换</title>
+</head>
+<body>
+	<input type="text" id="text1">
+	<span>+</span>
+	<input type="text" id="text2">
+	<input type="button" value="取值" id="btn">
+</body>
+<script>
+	var oText1 = document.getElementById('text1');
+	var oText2 = document.getElementById('text2');
+	var oBtn = document.getElementById('btn');
+	oBtn.onclick = function(){
+		var val1 = parseFloat(oText1.value);//在此处获取value值，若在之前就获取会获取到空值
+	    var val2 = parseFloat(oText2.value);
+	    if(isNaN(val1)){
+	    	console.log('val1=',val1);
+	    	alert("您的输入有误");
+	    }else if(isNaN(val2)){
+	    	console.log('val2=',val2);
+	    	alert("您的输入有误");
+	    }else{
+	    	alert(val1+val2);
+	    }
+	    // console.log(val1);	
+	}
+	// var val1 = parseInt(oText1);
+	// var val2 = parseInt(oText2);
+	// console.log(oText1);
+	
+</script>
+</html>

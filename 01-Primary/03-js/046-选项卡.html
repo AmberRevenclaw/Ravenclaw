@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>046-选项卡</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.title-list{
+			overflow: hidden;
+		}
+		.title-item{
+			float: left;
+			list-style: none;
+			text-align: center;
+			width: 100px;
+			height: 25px;
+		}
+		.active{
+			font-weight: bold;
+			border-bottom: 5px solid tomato;
+		}
+		.con-item{
+			display: none;
+			list-style: none;
+			width: 400px;
+			height: 400px;
+			text-align: center;
+			line-height: 400px;
+			font-size: 100px;
+			border:1px solid tomato;
+		}
+	</style>
+</head>
+<body>
+	<ul class="title-list" id="title-lis">
+		<li class="title-item active">第一个</li>
+		<li class="title-item">第二个</li>
+		<li class="title-item">第三个</li>
+		<li class="title-item">第四个</li>
+	</ul>
+	<ul class="content">
+		<li class="con-item"  style="display: block;">1</li>
+		<li class="con-item">2</li>
+		<li class="con-item">3</li>
+		<li class="con-item">4</li>
+	</ul>
+</body>
+<script>
+	var aTitle = document.querySelectorAll('.title-item');
+	// console.log(aTitle);
+	var aContent = document.querySelectorAll('.con-item');
+	// console.log(.con-item);
+	for(i = 0 ; i < aTitle.length ; i++){
+		// console.log(i);
+		// console.log(aTitle[i]);
+		aTitle[i].index = i;//通过添加属性index来获取aTitle[i]的下标
+		aTitle[i].onclick = function() {
+			// alert('1');
+			// console.log(aContent);
+			for(j = 0;j < aTitle.length; j++){
+				aTitle[j].className = 'title-item';
+				aContent[j].style.display = 'none';
+			}
+			this.className = 'title-item active';
+			aContent[this.index].style.display = 'block';
+		}
+	}
+</script>
+</html>

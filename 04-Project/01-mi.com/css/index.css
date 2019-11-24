@@ -384,27 +384,6 @@
    		height: 340px;
     	position: relative;
 	}
-	.product{
-		text-align: center;
-	}
-	.product-img{
-		margin-top: 54px;
-	}
-	.product-name{
-		margin-top: 38px;
-	}
-	.product-intro{
-		margin-top: 8px;
-		text-align: center;
-		color: #adadad;
-		font-size: 12px;
-	}
-	.product-price{
-		margin-top: 20px;
-		text-align: center;
-		font-size: 14px;
-		color: #ff6700;
-	}
 	.flash-product .product div del{
 		margin-left: 5px;
 		color: #adadad;
@@ -435,6 +414,7 @@
 		height: 614px;
 		background-color: pink;
 	}
+	
 /*页面底部*/
 	footer{
 		width: 100%;
