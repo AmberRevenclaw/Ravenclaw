@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>068-冒泡排序</title>
+	<script>
+		var arr = [3,5,8,4,6,9,7,1,2];
+		var temp;
+		//冒泡排序
+		//遍历原数组
+		//拿到的每一项后与后边每一项进行对比
+		//如果当前的值大于后边某一项的值，就与其互换位置
+		for(var i = 0;i<arr.length;i++){
+			for(var j = i+1;j<arr.length;j++){
+				if (arr[i]>arr[j]) {
+					temp = arr[i];
+					arr[i] = arr[j];
+					arr[j] = temp;
+				}
+			}
+			// console.log(arr);
+		}
+		console.log(arr);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

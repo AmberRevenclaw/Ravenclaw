@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>069-sor-比较函数</title>
+	<script>
+		var arr = [3,8,9,10,6,61,5,51,56,68];
+		console.log(arr);
+		var result = arr.sort(function(n1,n2){
+			// console.log(n1,n2);
+			// if(n1<n2){
+			// 	return -199;
+			// }else if(n1>n2){
+			// 	return 199;
+			// }else{
+			// 	return 0;
+			// }
+			return n2- n1;//倒序
+			//return n1- n2;//正序
+		})
+		console.log(arr);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>061-作用域的决定</title>
+	<script>
+		// var age = 1;
+		// function getAge(){
+		// 	var age = 2;
+		// 	return age;
+		// }
+		// console.log(age);
+		// console.log(getAge());
+
+		var a = 1128;
+		function fn(){
+			console.log(a);//定义时为a = 1128
+		}
+		function show(){
+			var a = 1998;
+			fn();//执行的时候取决于定义时的值
+		}
+		show();//执行show()时，a的值是1998，但fn()定义时a为1128，所以结果还是1128
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

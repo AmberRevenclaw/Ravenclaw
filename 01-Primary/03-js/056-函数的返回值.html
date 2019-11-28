@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>056-函数的返回值</title>
+	<script>
+		function sum(){
+			var res = 0;
+			if (arguments[0] == 0 ) {
+				return 0;
+			}
+			for(var i = 0;i < arguments.length;i++){
+				res = res + arguments[i];
+			}
+			// alert(res);
+			// return;//等同于 return res = undefined;
+			return res;//函数只能有一个返回值，想要返回多个值可以用数组
+		}
+		var rest = sum(0,1,2,3);
+		alert(rest);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

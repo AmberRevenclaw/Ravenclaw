@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>084-获取兄弟节点.html</title>
+</head>
+<body>
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li id="box">3</li>
+		<li>4</li>
+		<li>5</li>
+		<li>6</li>
+	</ul>
+</body>
+<script>
+	var oUl = document.getElementsByTagName('ul')[0];
+	var aLi = oUl.childNodes;
+	var oLi = document.getElementById("box");
+	// console.log(oLi);
+	console.log(aLi);
+	console.log(oLi.previousSibling);//获取的是文字节点
+	console.log(oLi.nextSibling);//获取的是文字节点
+	console.log(oLi.previousSibling == aLi[4]);
+	console.log(oLi.nextSibling == aLi[6]);
+	console.log(oLi.previousElementSibling);//获取的是元素节点
+	console.log(oLi.nextElementSibling);
+
+</script>
+</html>

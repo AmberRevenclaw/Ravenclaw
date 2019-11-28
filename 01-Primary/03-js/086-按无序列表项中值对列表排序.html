@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>086-按无序列表项中值对列表排序</title>
+</head>
+<body>
+	<ul id="lis1">
+		<li>42</li>
+		<li>22</li>
+		<li>13</li>
+		<li>43</li>
+		<li>15</li>
+		<li>26</li>
+	</ul>
+	<input type="button" value="排序" id="btn">
+</body>
+<script>
+	var oLis1 = document.getElementById('lis1');
+	var oBtn = document.getElementById('btn');
+	var aLi = oLis1.children;
+	// console.log(aLi.sort());
+	var resulut = [];
+	for(var i =0;i<aLi.length;i++){
+		resulut.push(aLi[i]);//添加元素进入数组
+	}
+	var res = resulut.sort(function(n1,n2){
+		return n1.innerHTML - n2.innerHTML;//使用sort比较函数来比较大小排序
+	})
+	// console.log(res);
+	oBtn.onclick = function(){
+		for(var j=0;j<res.length;j++){
+			oLis1.appendChild(res[j]);//打印比较后的函数
+		}
+	}
+	
+</script>
+</html>

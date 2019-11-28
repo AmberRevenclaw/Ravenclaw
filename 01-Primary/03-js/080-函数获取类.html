@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>080-函数获取类</title>
+</head>
+<body>
+	<ul id="lis">
+		<li class="box">1</li>
+		<li>2</li>
+		<li class="box">3</li>
+		<li>4</li>
+		<li class="box">5</li>
+		<li>6</li>
+	</ul>
+	<div id="content">
+		<div>1</div>
+		<div>2</div>
+		<div>3</div>
+		<div class="box1">4</div>
+		<div class="box1">5</div>
+		<div class="box1">6</div>
+	</div>
+</body>
+<script>
+	var oLis = document.getElementById("lis");
+	var oDiv = document.getElementById("content");
+	// console.log(oLis);
+	function getName(parantNode,oClass){
+		var ali = parantNode.children;//获取父元素的子元素
+		// console.log(ali);
+		var reslut = [];
+		for(var i = 0;i<ali.length;i++){
+			if(ali[i].className == oClass){
+			//前面的className是属性名，驼峰式命名。后面的oClass是在函数中定义的变量名
+				// console.log(ali[i]);
+				reslut.push(ali[i]);//将获取的元素加入空数组
+			}
+		}
+		return reslut;//返回所需要的值
+	}
+	var arr = getName(oLis,'box');
+	console.log(arr);
+	var arr2 = getName(oDiv,'box1');
+	console.log(arr2);
+</script>
+</html>

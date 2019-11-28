@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>058-全局变量</title>
+	<script>
+		var a = 1;
+		function fn1(){
+			a = 2;
+			console.log('fn1',a);			
+			function fn2(){
+				console.log('fn2',a);
+				function fn3(){
+					console.log('fn3',a);
+				}
+				fn3();
+			}
+			fn2();
+		}
+		console.log('gloal',a);
+		fn1();
+		console.log('gloal',a);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

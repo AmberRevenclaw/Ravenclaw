@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>082-获取父元素</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.bigbox{
+			/*position: relative;*/
+			width: 400px;
+			height: 400px;
+			border: 1px solid #000;
+			margin: 100px auto;
+		}
+		.smallbox{
+			position: absolute;
+			width: 100px;
+			height: 100px;
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<div class="bigbox">
+		<div class="smallbox"></div>
+	</div>
+</body>
+<script>
+	var box = document.getElementsByClassName('smallbox')[0];
+	//getElementsByClassName获取的是数组，哪怕只有一个元素
+	// console.log(box);
+	var parentBox = box.parentNode;
+	console.log('parentNode',parentBox);
+	var parentBox2 = box.offsetParent;
+	console.log('offsetParent',parentBox2);
+</script>
+</html>

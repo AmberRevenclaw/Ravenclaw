@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>085-获取dom节点属性</title>
+</head>
+<body>
+	<input type="text" id="txt">
+	<input type="button" value="提交" id="btn">
+	<textarea name="留言" id="area" cols="30" rows="10"></textarea>
+</body>
+<script>
+	var oBtn = document.getElementById('btn');
+	var otxt = document.getElementById('txt');
+	var oArea = document.getElementById('area');
+	oBtn.onclick = function(){
+		var val = otxt.value;
+		oArea.value = val;
+		// var val = otxt.getAttribute(value);
+	}
+</script>
+</html>

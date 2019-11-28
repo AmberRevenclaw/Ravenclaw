@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>081-鼠标移入高亮移出恢复.html</title>
+</head>
+<body>
+	<ul id="lis">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+		<li>6</li>
+		<li>7</li>
+		<li>8</li>
+	</ul>
+</body>
+<script>
+	var oUl = document.getElementById("lis");
+	var aLi = oUl.children;//获取父元素的全部子元素
+	// console.log(aLi);
+	for(var i = 0;i < aLi.length;i++){
+		if(i%2){
+			aLi[i].style.backgroundColor = 'pink';
+		}else{
+			aLi[i].style.backgroundColor = '#FE7474';
+		}
+		/*var color;//定义一个变量
+		aLi[i].onmouseover = function(){
+			color = this.style.backgroundColor;//保存更改之前的背景颜色
+			this.style.backgroundColor = 'yellow';
+		}
+		aLi[i].onmouseout = function(){
+			this.style.backgroundColor = color;//获取之前保存的背景颜色
+		}*/
+
+		aLi[i].onmouseover = function(){
+			this.color = this.style.backgroundColor;//保存更改之前的背景颜色
+			this.style.backgroundColor = 'yellow';
+		}
+		aLi[i].onmouseout = function(){
+			this.style.backgroundColor = this.color;//获取之前保存的背景颜色
+		}
+	}
+</script>
+</html>
