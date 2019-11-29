@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>091-克隆节点.html</title>
+	<style>
+		div{
+			width: 300px;
+			height: 300px;
+			margin-bottom: 10px;
+			background-color: pink;			
+		}
+	</style>
+</head>
+<body>
+	<input type="button" value="CloneFalse" id="btn1">
+	<input type="button" value="CloneTrue" id="btn2">
+	<div id="box">box</div>
+</body>
+<script>
+	var oBtn1 = document.getElementById('btn1');
+	var oBtn2 = document.getElementById('btn2');
+	var oBox = document.getElementById('box');
+	oBtn1.onclick = function(){
+		// alert('1');
+		var oCbox = oBox.cloneNode();//只克隆节点
+		// console.log(oCbox);
+		document.body.appendChild(oCbox);
+	}
+	oBtn2.onclick = function(){
+		// alert('2');
+		var oCbox = oBox.cloneNode(true);
+		document.body.appendChild(oCbox);
+	}
+</script>
+</html>

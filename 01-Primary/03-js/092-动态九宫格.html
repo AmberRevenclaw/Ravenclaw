@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>092-动态九宫格</title>
+	<style>
+		#box{
+			width: 100px;
+			height: 100px;
+			background-color: skyblue;
+			margin-top: 20px;
+		}
+	</style>
+</head>
+<body>
+	<input type="button" id="btn" value="生成">
+	<div id="Bbox">
+		<div id="box"></div>
+	</div>
+	
+</body>
+<script>
+	var oBtn = document.getElementById('btn');
+	var oBox = document.getElementById('box');
+	var oDiv = document.getElementById('Bbox');
+	var aSon = oDiv.children;
+	// console.log(aSon); 
+	oBtn.onclick = function(){
+		var NewBox = aSon[0];
+		var oHeight
+		oDiv.appendChild(NewBox);
+		for(var i = 0;i<aSon.length;i++){
+
+		}
+	}
+</script>
+</html>

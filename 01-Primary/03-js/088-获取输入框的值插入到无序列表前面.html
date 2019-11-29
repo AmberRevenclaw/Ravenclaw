@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>088-获取输入框的值插入到无序列表前面</title>
+</head>
+<body>
+	<input type="text" id="txt">
+	<input type="button" value="插入" id="btn">
+	<ul id="ul1">
+		<li>1</li>
+	</ul>
+</body>
+<script>
+	var oTxt = document.getElementById('txt');
+	var oBtn = document.getElementById('btn');
+	var oUl = document.getElementById('ul1');
+	oBtn.onclick = function(){
+		var val = oTxt.value;
+		var oLi = document.createElement('li');
+		// console.log(oLi);
+		oLi.innerHTML = val;
+		oUl.insertBefore(oLi,oUl.firstChild);//在oUl中插入，插入位置是oUl.firstChild
+		// oUl.appendChild(oLi);
+	}
+</script>
+</html>

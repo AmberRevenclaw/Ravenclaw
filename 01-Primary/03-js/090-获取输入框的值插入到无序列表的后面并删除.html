@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>090-获取输入框的值插入到无序列表的后面并删除</title>
+	<style>
+		div{
+			width: 300px;
+			height: 300px;
+			margin: 300px auto;
+			text-align: center;
+		}
+		li{
+			text-align: left;
+			list-style: none;
+			width: 300px;
+			border-bottom: 1px solid #000;
+		}
+		a{
+			float: right;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<input type="text" id="txt">
+		<input type="button" value="发布" id="btn">
+		<ul id="ul1">
+		</ul>
+	</div>
+	
+</body>
+<script>
+	var oBtn = document.getElementById('btn');
+	var oTxt = document.getElementById('txt');
+	var oUl = document.getElementById('ul1');
+	oBtn.onclick = function(){
+		var val = oTxt.value;//保存输入的value值
+		var oLi = document.createElement('li');
+		var oA  = document.createElement('a');
+		oLi.innerHTML = val;
+		oA.href = 'javascript:';
+		//a标签的href属性必须手动添加，且“javascript：”中的：不能省略，否则会出现跳转错误
+		oA.innerHTML = '删除';
+		oUl.appendChild(oLi);//追加li标签和a标签
+		oLi.appendChild(oA);
+		oA.onclick = function(){
+			this.parentNode.parentNode.removeChild(this.parentNode);//点击a标签时删除该行li 
+		}
+		oTxt.value = '';//清空输入框的值
+	}
+</script>
+</html>

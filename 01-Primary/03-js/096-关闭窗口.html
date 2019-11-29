@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>096-关闭窗口</title>
+</head>
+<body>
+	<input type="button" value="关闭窗口" id="btn">
+</body>
+<script>
+	var oBtn = document.getElementById('btn');
+	oBtn.onclick = function(){
+		window.close();//在火狐浏览器中只能关闭脚本打开的页面，用户手动打开的页面无法关闭
+	}
+</script>
+</html>

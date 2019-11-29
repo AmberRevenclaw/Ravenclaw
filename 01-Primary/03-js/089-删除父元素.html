@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>084-删除父元素</title>
+</head>
+<body>
+	<ul>
+		<li>1.<a href="#">删除</a></li>
+		<li>2.<a href="#">删除</a></li>
+		<li>3.<a href="#">删除</a></li>
+		<li>4.<a href="#">删除</a></li>
+		<li>5.<a href="#">删除</a></li>
+		<li>6.<a href="#">删除</a></li>
+		<li>7.<a href="#">删除</a></li>
+		<li>8.<a href="#">删除</a></li>
+	</ul>
+</body>
+<script>
+	var aA = document.getElementsByTagName('a');
+	// console.log(aA);
+	for (var i = 0; i <aA.length; i++) {
+		// console.log(parent);
+		aA[i].onclick = function(){
+			this.parentNode.parentNode.removeChild(this.parentNode); 
+			//a标签-li标签-ul标签
+			//点击的是a标签，但是是从ul列表中删除li标签
+		}
+	}
+</script>
+</html>
