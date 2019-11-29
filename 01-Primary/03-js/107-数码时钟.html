@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>107-数码时钟</title>
+	<style>
+		body{
+			background-color: #000;
+		}
+		#timer{
+			text-align: center;
+			margin: 200px auto;
+			color: #fff;
+			font-size: 100px;
+		}
+	</style>
+</head>
+<body>
+	<div id="timer">
+		
+	</div>
+</body>
+<script>
+	var oDiv = document.getElementById('timer');
+	var today = new Date();
+	// console.log(today);
+	var oHour = today.getHours();
+	// console.log(oHour);
+	var oMinutes = today.getMinutes();
+	var oSecond = today.getSeconds();
+	var nowtime = oHour+":"+oMinutes+":"+oSecond;
+	oDiv.innerHTML = nowtime;
+</script>
+</html>

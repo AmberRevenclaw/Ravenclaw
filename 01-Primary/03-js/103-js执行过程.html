@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>103-js执行过程</title>
+</head>
+<body>
+	<input type="button" value="执行" id="btn">
+</body>
+<script>
+	var oBtn = document.getElementById('btn');
+	var i = 0;
+	oBtn.onclick = function(){
+		i++;
+		console.log(i);
+	}
+	var timer = setTimeout('console.log(i)',3000);
+	i++;
+</script>
+</html>

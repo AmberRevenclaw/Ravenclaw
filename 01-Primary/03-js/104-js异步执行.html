@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>104-js异步执行</title>
+</head>
+<body>
+	
+</body>
+<script>
+	  /*console.log(1);
+      setTimeout(function () {
+          console.log(2);
+      }, 0);//异步任务
+      console.log(3);*/
+
+      /*console.log('A');
+      setTimeout(function () {
+          console.log('B');
+      }, 0);
+      while (true) {
+      
+      }//陷入死循环*/
+
+      for (var i = 0; i < 3; i++) {
+	    setTimeout(function () {
+	        console.log(i);
+	    }, 1000);
+      }
+      //循环是同步事件，每循环一次都将console.log(i)放入任务列表
+      //循环执行三次，任务列表有三个console.log(i)
+      //当循环结束时，再依次执行console.log(i)
+      //此时已退出循环，i值为3
+</script>
+</html>
