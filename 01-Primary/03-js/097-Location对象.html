@@ -5,6 +5,18 @@
 	<title>097-Location对象</title>
 </head>
 <body>
-	
+	<input type="button" value="跳转" id="btn">
 </body>
+<script>
+	// console.log('Location',location);
+	// console.log('Location',window.location);
+	// console.log('Location',document.location);
+	// console.log(window.location.href);
+
+	var oBtn = document.getElementById('btn');
+	oBtn.onclick = function(){
+		// window.location.href="https://www.bilibili.com/";
+		window.location.assign("https://www.bilibili.com/")
+	}
+</script>
 </html>

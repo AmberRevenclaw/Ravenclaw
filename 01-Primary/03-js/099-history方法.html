@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>099-history方法</title>
+</head>
+<body>
+	<a href="https://www.bilibili.com/">跳转到哔哩哔哩</a>
+	<input type="button" id="btn1" value="向前">
+	<input type="button" id="btn2" value="向后">
+</body>
+<script>
+	var oBtn1 = document.getElementById('btn1');
+	var oBtn2 = document.getElementById('btn2');
+	oBtn1.onclick = function(){
+		// alert('1');
+		// history.go(1);
+		history.forward()
+	}
+	oBtn2.onclick = function(){
+		// alert('2');
+		// history.go(-1);
+		history.back();
+	}
+</script>
+</html>

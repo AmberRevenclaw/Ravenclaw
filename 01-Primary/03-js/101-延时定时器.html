@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>101-延时定时器.html</title>
+	<script>
+		// setTimeout('console.log(123)',2000);
+		/*function test(){
+			console.log('123');
+		}
+		setTimeout(test,2000);*/
+		var timer = setTimeout(function(){
+			console.log('123');
+		},2000);//定义延时定时器timer
+		console.log(timer);
+		clearTimeout(timer);//关闭延时定时器
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
