@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>110-延迟菜单</title>
+	<style>
+		.box{
+			width: 550px;
+			margin: 200px auto;
+		}
+		.leftbox{
+			float: left;
+			width: 100px;
+			height: 400px;
+			background-color: #ccc;
+		}
+		.rightbox{
+			float: right;
+			width: 400px;
+			height: 400px;
+			background-color: pink;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="leftbox"></div>
+		<div class="rightbox"></div>	
+	</div>
+</body>
+<script>
+	//1.鼠标移入左边盒子时，右边盒子显示
+	var oLeftBox = document.querySelector('.leftbox');
+	var oRightBox = document.querySelector('.rightbox');
+	//5.定义延时定时器ID，解决鼠标在左右盒子切换时的闪烁、反应时间不够的问题
+	var oTime;
+	//9.清除延时定时器，消除定时器影响
+	//10.相同代码简写
+	oRightBox.onmouseover = oLeftBox.onmouseover = function(){
+		clearTimeout(oTime);
+		oRightBox.style.display = 'block';
+	}
+	//2.鼠标移出左边盒子时，右边盒子消失
+	//6.添加延时定时器，给足操作反应时间
+	oRightBox.onmouseout = oLeftBox.onmouseout = function(){
+		oTime = setTimeout('oRightBox.style.display = "none";',500);
+	}
+	//3.鼠标在右边盒子上时，右边盒子保持显示
+	//7.清除延时定时器，消除定时器影响
+	/*oRightBox.onmouseover = function(){
+		clearTimeout(oTime);
+		oRightBox.style.display = 'block';		
+	}*/
+	//4.鼠标移出右边盒子时，右边盒子消失
+	//8.添加延时定时器，给足操作反应时间
+	/*oRightBox.onmouseout = function(){
+		oTime = setTimeout('oRightBox.style.display = "none";',500);
+	}*/
+</script>
+</html>

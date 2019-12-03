@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>113-轮播图-左右切换</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		.carousel{
+			width: 1226px;
+			height: 460px;
+			overflow: hidden;
+			margin: 200px auto;
+			border: 5px solid #ccc;
+			position: relative;
+		}
+		.box{
+			position: relative;
+			width: 3678px;
+			height: 100%;
+			/*transition: all 1s;*/
+		}
+		.item{
+			float: left;
+			width: 1226px;
+			height: 100%;
+		}
+		img{
+			width: 100%;
+			height: 100%;
+		}
+		.carousel .arrow{
+			position: absolute;
+			top: 50%;
+			margin-top: -40px;
+			width: 40px;
+			height: 80px;
+			line-height: 80px;
+			text-align: center;
+			z-index: 99;
+			font-size: 30px;
+			color:#d3d2d4;
+			cursor: pointer;
+			user-select: none;
+		}
+		.carousel .arrow:hover{
+			background: rgba(0,0,0,0.5);
+			color: #fff;
+		}
+		.carousel .left-arrow{
+			left: 0px;
+			border-top-right-radius: 3px;
+			border-bottom-right-radius: 3px;
+		}
+		.carousel .right-arrow{
+			right: 0px;
+			border-top-left-radius: 3px;
+			border-bottom-left-radius: 3px;
+		}
+		.carousel .btn-list{
+			position: absolute;
+			bottom: 20px;
+			right: 30px;
+			z-index: 99;
+		}
+		.carousel .btn-item{
+			float: left;
+			width: 10px;
+			height: 10px;
+			border: 2px solid #b1b0b3;
+			box-sizing: border-box;
+			border-radius: 50%;
+			margin-right: 10px;
+			background: #8f8e92;
+		}
+		.carousel .btn-item:hover{
+			background: #fff;
+		}
+		.carousel .btn-item.active{
+			background: #fff;
+
+		}
+	</style>
+</head>
+<body>
+	<div class="carousel">
+		<ul class="box">
+			<li class="item"><img src="imgs/carousel-1.jpg"></li>
+			<li class="item"><img src="imgs/carousel-2.jpg"></li>
+			<li class="item"><img src="imgs/carousel-3.jpg"></li>
+		</ul>
+		<span class="arrow left-arrow"><i class="iconfont">&lt;</i></span>
+		<span class="arrow right-arrow"><i class="iconfont">&gt;</i></span>
+		<ul class="btn-list">
+			<li class="btn-item active"></li>
+			<li class="btn-item"></li>
+			<li class="btn-item"></li>
+		</ul>
+	</div>
+</body>
+<script>
+	var oCarousel = document.querySelector('.carousel');
+	var oBox = document.querySelector('.box');
+	var oLeftBtn = document.querySelector('.left-arrow');
+	var oRightBtn = document.querySelector('.right-arrow');
+	var aBtns = document.querySelectorAll('.btn-item');
+	//储存显示图片下标
+	var now = 0;
+	//定义左边距离
+	var Left = 0;
+	//精简代码
+	function tab(){
+		//清空样式
+		for(var i = 0;i<aBtns.length;i++){
+			aBtns[i].className = 'btn-item';
+		}
+		//更改位置，修改样式
+		oBox.style.left = Left+'px';
+		aBtns[now].className = 'btn-item active';
+	}
+	//点击右边按钮时切换到下一张
+	oRightBtn.onclick = function(){
+		// alert('1');
+		//每点击一次，图片下标+1，超过图片数量时回到第一张
+		now++;
+		if(now>aBtns.length-1){
+			now = 0;
+		}
+		//每点击一次，向左边移动1226个像素
+		//超过最后一张图片距离时回到第一张
+		Left = Left - 1226;
+		if(Left < -2452){
+			Left = 0;
+			now = 0;
+		}
+		tab();
+		// console.log(oBox.style.left);
+	}
+	//点击左边按钮切换到上一张
+	oLeftBtn.onclick = function(){
+		// alert('1');
+		now--;
+		if(now<0){
+			now = aBtns.length-1;
+		}
+		Left = oBox.offsetLeft + 1226;
+		if(Left > 0){
+			Left = -2452;
+		}
+		tab();
+		// console.log(oBox.style.left);
+	}
+	//自动轮播
+	//循环定时器自动执行
+	//鼠标放上整个盒子时，自动轮播停下
+	timer = setInterval(oRightBtn.onclick,2000);
+	oCarousel.onmouseover = function(){
+		clearInterval(timer);
+	}
+	oCarousel.onmouseout = function(){
+		timer = setInterval(oRightBtn.onclick,2000);
+	}
+	//右下角角标切换图片
+	for(var i =0;i<aBtns.length;i++){
+		//3-2.储存下标
+		aBtns[i].index = i;
+		aBtns[i].onclick = function(){
+			now = this.index;
+			tab();
+		}
+	}
+</script>
+</html>

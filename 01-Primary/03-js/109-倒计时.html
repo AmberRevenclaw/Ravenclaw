@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>109-倒计时</title>
+	<style>
+		body{
+			background-color: #000;
+		}
+		#timer{
+			color: #fff;
+			text-align: center;
+			font-size: 100px;
+			margin: 300px auto;
+		}
+	</style>
+</head>
+<body>
+	<div id="timer">
+		
+	</div>
+</body>
+<script>
+	//定义截止时间
+	//获得当前时间到截止时间的值
+	//转换小时、分钟、秒
+	//若获取值小于10，转换为两位数
+	//当抵达截止时间时，停止倒计时
+	
+	var oTimer = document.getElementById('timer');
+	var endTime = new Date('2019/12/01 18:00:00');//规定终止时间
+	var allSecond = endTime.getTime();//获取从标准时间到规定截止时间的毫秒数
+	var timeClock = 0;//定义循环定时器的ID
+	function judge(num){
+		if(num<10){
+			return '0'+num;//当数字小于10时，在数字前添加字符‘0’
+		}else{
+			return ''+num;
+		}
+	}//判断是否为两位数
+	function getTime(){
+		var second = parseInt((allSecond - Date.now())/1000);//获取差值，即当前时间到规定时间的秒数
+		if(second <= 0){
+			second = 0;//将秒数清零，此后获取的所有值都为0
+			clearInterval(timeClock);//当倒计时结束到达规定截止时间时，清除循环定时器
+		}
+		var iHour = parseInt(second/3600);//获取小时
+		var iMinuter = parseInt((second%3600)/60);//获取分钟
+		var iSecond = second%60;//获取秒
+		oTimer.innerHTML = '距离时间还有'+judge(iHour)+'时'+judge(iMinuter)+'分'+judge(iSecond)+'秒';
+	}
+	timeClock = setInterval(getTime,1000);//执行循环定时器，每隔一秒刷新一次
+	getTime();
+</script>
+</html>

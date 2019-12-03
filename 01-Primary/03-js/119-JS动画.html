@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>119-JS动画</title>
+	<style>
+		.box{
+			width: 600px;
+			height: 800px;
+			border: 1px solid #000;
+			position: relative;
+		}
+		.son{
+			position: absolute;
+			width: 100px;
+			height: 100px;
+			background-color: pink;
+		}
+	</style>
+</head>
+<body>
+	<input type="button" value="开始动画" id="btn">
+	<div class="box">
+		<div class="son"></div>
+	</div>
+</body>
+<script>
+	//获取元素
+	var oBtn = document.getElementById('btn');
+	var oBox = document.querySelector('.son');
+	//设置定时器ID
+	var timer = 0;
+	//点击触发事件
+	oBtn.onclick = function(){
+		timer = setInterval(function(){
+			if (oBox.offsetLeft == 500) {
+				clearInterval(timer);
+			}else{
+				oBox.style.left = oBox.offsetLeft + 10 +'px';
+			}	
+		},50);
+	}
+</script>
+</html>

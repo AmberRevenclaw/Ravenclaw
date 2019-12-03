@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>117-scroll相关值</title>
+	<style>
+		body{
+			height: 3000px;
+			width: 3500px;
+		}
+	</style>
+</head>
+<body>
+	
+</body>
+<script>
+	/*console.log("scrollLeft",document.documentElement.scrollLeft)
+	//,读写属性,表示隐藏在内容区域左侧的宽度,一般指水平滚动距离
+	console.log("scrollTop",document.documentElement.scrollTop)
+	//,读写属性,表示隐藏在内容区域上侧的高度,一般指垂直滚动距离
+	console.log("scrollWidth",document.documentElement.scrollWidth)
+	//,只读属性,表示元素内容的宽度,包括由于滚动而未显示在屏幕中内容
+	console.log("scrollHeight",document.documentElement.scrollHeight)
+	//,只读属性,表示元素内容的高度,包括由于滚动而未显示在屏幕中内容*/
+
+	//兼容处理
+	//IE9和高级浏览器--标准模式--混杂模式
+	//‘或’运算
+	var l = window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft;		
+	var t = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+	console.log(l);
+	console.log(t);
+
+</script>
+</html>

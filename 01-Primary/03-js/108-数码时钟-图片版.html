@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>108-数码时钟图片版</title>
+	<style>
+		body{
+			background-color: #000;
+		}
+		#timer{
+			text-align: center;
+			margin: 200px auto;
+			color: #fff;
+			font-size: 100px;
+		}
+		img{
+			height: 100px;
+			vertical-align: middle;
+		}
+	</style>
+</head>
+<body>
+	<div id="timer">
+		<img src="imgs/clocks/0.png" alt="">
+		<img src="imgs/clocks/0.png" alt="">&nbsp;:
+		<img src="imgs/clocks/0.png" alt="">
+		<img src="imgs/clocks/0.png" alt="">&nbsp;:
+		<img src="imgs/clocks/0.png" alt="">
+		<img src="imgs/clocks/0.png" alt="">
+	</div>
+</body>
+<script>
+	var oDiv = document.getElementById('timer');
+	var aImg = oDiv.children;
+	// console.log(aImg);
+	function judge(num){
+		if(num<10){
+			return '0'+num;//当数字小于10时，在数字前添加字符‘0’
+		}else{
+			return ''+num;
+		}
+	}//判断是否为两位数
+	function getTime(){
+		var today = new Date();//获取当前时间
+		var oHour = today.getHours();
+		var oMinutes = today.getMinutes();
+		var oSecond = today.getSeconds();//单独获取时、分、秒
+		var nowtime = judge(oHour)+judge(oMinutes)+judge(oSecond);//获得时分秒都是两位数的字符串
+		// oDiv.innerHTML = nowtime;
+		// console.log(nowtime);
+		for(var i=0;i<aImg.length;i++){
+			aImg[i].src = "imgs/clocks/"+nowtime[i]+".png";//在循环中更换每一位上的图片
+		}
+	}
+	getTime();
+	setInterval(getTime,1000);//每隔一秒刷新一次getTime函数
+	
+</script>
+</html>

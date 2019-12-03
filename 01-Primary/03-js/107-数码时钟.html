@@ -22,13 +22,31 @@
 </body>
 <script>
 	var oDiv = document.getElementById('timer');
-	var today = new Date();
-	// console.log(today);
-	var oHour = today.getHours();
+	// console.log(today);	
 	// console.log(oHour);
-	var oMinutes = today.getMinutes();
-	var oSecond = today.getSeconds();
-	var nowtime = oHour+":"+oMinutes+":"+oSecond;
-	oDiv.innerHTML = nowtime;
+	function judge(num){
+			if(num<10){
+				return '0'+num;
+			}else{
+				return ''+num;
+			}
+	}
+	function getTime(){
+		var today = new Date();
+		var oHour = today.getHours();
+		var oMinutes = today.getMinutes();
+		var oSecond = today.getSeconds();
+		// if(oMinutes<10){
+		// 	oMinutes = '0'+oMinutes;
+		// }
+		// if (oSecond<10) {
+		// 	oSecond = '0'+oSecond;
+		// }
+		var nowtime = judge(oHour)+":"+judge(oMinutes)+":"+judge(oSecond);
+		oDiv.innerHTML = nowtime;
+	}
+	getTime();
+	setInterval(getTime,1000);
+	
 </script>
 </html>
