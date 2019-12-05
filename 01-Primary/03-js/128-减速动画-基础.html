@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>119-JS动画</title>
+	<title>128-减速动画-基础</title>
 	<style>
 		.box{
 			width: 1000px;
@@ -12,6 +12,7 @@
 		}
 		.son{
 			position: absolute;
+			left: 0px;
 			width: 100px;
 			height: 100px;
 			background-color: pink;
@@ -36,14 +37,9 @@
 		clearInterval(timer);
 		timer = setInterval(function(){
 			//定义动画移动速度
-			var iSpeed = 0;
+			var iSpeed = (900-oBox.offsetLeft)/10;
+			iSpeed = Math.ceil(iSpeed);
 			// console.log(timer);
-			//当未达到目标值时，速度为10；超过目标值时，反向靠近目标值
-			if(oBox.offsetLeft < 900){
-				iSpeed = 10;
-			}else{
-				iSpeed = -10;
-			}
 			//到达目标值时清除定时器
 			if (oBox.offsetLeft == 900) {
 				clearInterval(timer);

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>119-JS动画</title>
+	<title>120-JS动画结束的条件</title>
 	<style>
 		.box{
 			width: 1000px;
@@ -12,6 +12,7 @@
 		}
 		.son{
 			position: absolute;
+			left: 1200px;
 			width: 100px;
 			height: 100px;
 			background-color: pink;
@@ -40,12 +41,16 @@
 			// console.log(timer);
 			//当未达到目标值时，速度为10；超过目标值时，反向靠近目标值
 			if(oBox.offsetLeft < 900){
-				iSpeed = 10;
+				iSpeed = 7;
 			}else{
-				iSpeed = -10;
+				iSpeed = -7;
 			}
 			//到达目标值时清除定时器
-			if (oBox.offsetLeft == 900) {
+			//对取值取绝对值，消除负数正数的影响
+			//当开始值大于目标值时，此时速度是负数
+			if (Math.abs((900-oBox.offsetLeft)) < Math.abs(iSpeed)) {
+				//差值小于速度时直接到达目标值
+				oBox.style.left = '900px';
 				clearInterval(timer);
 			}else{
 				oBox.style.left = oBox.offsetLeft + iSpeed +'px';

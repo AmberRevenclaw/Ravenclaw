@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>125-底部菜单</title>
+	<style>
+		body{
+			height: 3000px;
+		}
+		.box{
+			position: absolute;
+			bottom: 0px;
+			right: 0px;
+			width: 100px;
+			height: 100px;
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+	</div>
+</body>
+<script type="text/javascript" src='js/util.js'></script>
+<script>
+	var oBox = document.querySelector('.box');
+	window.onload = window.onresize = window.onscroll = function(){
+		console.log(window.innerHeight - oBox.offsetHeight + getScrollTop());
+		var iTop = window.innerHeight - oBox.offsetHeight + getScrollTop();
+		// oBox.style.top = iTop + 'px';
+		animate(oBox,'top',iTop)
+	}
+</script>
+</html>

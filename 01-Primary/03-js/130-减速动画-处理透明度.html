@@ -2,19 +2,16 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>119-JS动画</title>
+	<title>130-减速动画-处理透明度</title>
 	<style>
-		.box{
-			width: 1000px;
-			height: 800px;
-			border: 1px solid #000;
-			position: relative;
-		}
 		.son{
 			position: absolute;
+			top: 50px;
+			left: 0px;
 			width: 100px;
 			height: 100px;
 			background-color: pink;
+			opacity: 0;
 		}
 	</style>
 </head>
@@ -37,20 +34,19 @@
 		timer = setInterval(function(){
 			//定义动画移动速度
 			var iSpeed = 0;
-			// console.log(timer);
-			//当未达到目标值时，速度为10；超过目标值时，反向靠近目标值
-			if(oBox.offsetLeft < 900){
-				iSpeed = 10;
-			}else{
-				iSpeed = -10;
-			}
-			//到达目标值时清除定时器
-			if (oBox.offsetLeft == 900) {
+			var current = parseFloat(getComputedStyle(oBox,false)['opacity']);
+			current = Math.round(current * 100);
+			iSpeed = (100-current)/10;
+			//当速度小于0时向下取整，当速度大于0时向上取整
+			//简写
+			iSpeed > 0 ? iSpeed = Math.ceil(iSpeed) : iSpeed = Math.floor(iSpeed);
+			console.log(iSpeed);
+			//到达目标值时,即速度为0时清除定时器
+			if (!iSpeed) {
 				clearInterval(timer);
 			}else{
-				oBox.style.left = oBox.offsetLeft + iSpeed +'px';
+				oBox.style.opacity = (current + iSpeed)/100;				
 			}
-			// oBox.style.left = oBox.offsetLeft + iSpeed +'px';	
 		},50);
 	}
 </script>

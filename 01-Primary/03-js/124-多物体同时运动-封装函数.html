@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>124-多物体同时运动-封装函数</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.father{
+			width: 100px;
+			margin: 50px auto;
+		}
+		.father div{
+			width: 100px;
+			height: 100px;
+			background: red;
+			line-height: 100px;
+			text-align:center;
+			margin-top: 20px;
+		}
+	</style>
+</head>
+<body>
+	<div class="father">
+		<div id="box1">变宽</div>
+		<div id="box2">变高</div>
+		<div id="box3">变透明</div>
+	</div>
+</body>
+<script>
+	var oBox1 = document.getElementById('box1');
+	var oBox2 = document.getElementById('box2');
+	var oBox3 = document.getElementById('box3');
+
+	function animate(obj,attr,value){
+		clearInterval(obj.timer);
+		timer = setInterval(function(){
+			var number = parseFloat(getComputedStyle(obj,false)[attr]);
+			//如果更改的属性是透明度，传入的值需要*100
+			if(attr == 'opacity'){
+				number = number * 100;
+			}
+			var iSpeed = 0;
+			if(number < value){
+				iSpeed = 5;
+			}else{
+				iSpeed = -5;
+			}
+			if (Math.abs(value-number) < Math.abs(iSpeed)) {
+				//attr传进来的是一串字符串
+				//如果更改属性是透明度则需要另做处理
+				if(attr == 'opacity'){
+					obj.style[attr] = value/100;
+				}else{
+					obj.style[attr] = value+'px';
+				}
+				clearInterval(obj.timer);
+			}else{
+				if(attr == 'opacity'){
+					obj.style[attr] = (number + iSpeed)/100;
+				}else{
+					obj.style[attr] = number + iSpeed + 'px';
+				}	
+			}	
+		},50);
+	}
+	// var timer;
+	//多个动画同时进行时不能使用单一的定时器，而是在每个dom节点上单独添加定时器，使运行时不互相干扰
+	oBox1.onmouseover = function(){
+		animate(oBox1,'width',400);
+	}
+	oBox2.onmouseover = function(){
+		animate(oBox2,'height',400);
+	}
+	oBox3.onmouseover = function(){
+		animate(oBox3,'opacity',20);
+	}
+</script>
+<ml>

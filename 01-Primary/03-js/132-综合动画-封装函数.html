@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>132-综合动画-封装函数</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.father{
+			width: 100px;
+			margin: 50px auto;
+		}
+		.father div{
+			width: 100px;
+			height: 100px;
+			background: red;
+			line-height: 100px;
+			text-align:center;
+			margin-top: 20px;
+		}
+	</style>
+</head>
+<body>
+	<div class="father">
+		<div id="box1">变宽</div>
+		<div id="box2">变高</div>
+		<div id="box3">变透明</div>
+	</div>
+</body>
+<script>
+	var oBox1 = document.getElementById('box1');
+	var oBox2 = document.getElementById('box2');
+	var oBox3 = document.getElementById('box3');
+	//obj:处理对象，attr:更改属性，value:目标值
+	function animate(obj,attr,value,isLinear){
+		//判断是否传入isLinear判断值，默认匀速运动
+		if(isLinear == undefined){
+			isLinear = true;
+		}
+		//清除定时器
+		clearInterval(obj.timer);
+		//循环定时器设置
+		obj.timer = setInterval(function(){
+			//获取要更改的值
+			var current = parseFloat(getComputedStyle(obj,false)[attr]);
+			//设置初始速度
+			var iSpeed = 0;
+			//设定关闭定时器条件
+			var isStop = false;
+			//若更改属性为透明值则另做处理
+			if(attr == 'opacity'){
+				current = Math.round(current * 100);
+			}
+			//isLinear为ture时做匀速运动动画,否则做减速运动
+			if (isLinear) {//匀速运动
+				if(current < value){
+					iSpeed = 5;
+				}else{
+					iSpeed = -5;
+				}
+				//匀速运动的终止条件
+				if (Math.abs(value-current) < Math.abs(iSpeed)){
+					if(attr == 'opacity'){
+						obj.style[attr] = value/100;
+					}else{
+						obj.style[attr] = value+'px';
+					}	
+					isStop = true;
+				}
+			}else{//减速运动
+				iSpeed = (value-current)/10;
+				//决定速度向上取整还是向下取整
+				iSpeed > 0 ? iSpeed = Math.ceil(iSpeed) : iSpeed = Math.floor(iSpeed);
+				//减速运动的终止条件
+				if (!iSpeed) {
+					isStop = true;
+				}
+			}
+			//循环返回结果或终止循环	
+			if(isStop){
+				clearInterval(obj.timer);
+			}else{
+				if (attr == 'opacity') {
+					obj.style[attr] = (current + iSpeed)/100;
+				}else{
+					obj.style[attr] = current + iSpeed +'px';
+				}
+			}
+		},30)
+	};
+	oBox1.onmouseover = function(){
+		animate(oBox1,'width',300,true);
+	}
+	oBox2.onmouseover = function(){
+		animate(oBox2,'height',300,true);
+	}
+	oBox3.onmouseover = function(){
+		animate(oBox3,'opacity',20,true);
+	}
+
+</script>
+</html>

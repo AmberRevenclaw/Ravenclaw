@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>123-动画-多物体同时运动</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.father{
+			width: 100px;
+			margin: 50px auto;
+		}
+		.father div{
+			width: 100px;
+			height: 100px;
+			background: red;
+			line-height: 100px;
+			text-align:center;
+			margin-top: 20px;
+		}
+	</style>
+</head>
+<body>
+	<div class="father">
+		<div id="box1">变宽</div>
+		<div id="box2">变高</div>
+		<div id="box3">变透明</div>
+	</div>
+</body>
+<script>
+	var oBox1 = document.getElementById('box1');
+	var oBox2 = document.getElementById('box2');
+	var oBox3 = document.getElementById('box3');
+	// var timer;
+	//多个动画同时进行时不能使用单一的定时器，而是在每个dom节点上单独添加定时器，使运行时不互相干扰
+	oBox1.onmouseover = function(){
+		//每次点击时先清除定时器，以防多次点击开启多个定时器
+		clearInterval(oBox1.timer);
+		timer = setInterval(function(){
+			//定义动画移动速度
+			var iSpeed = 0;
+			if(oBox1.offsetWidth < 400){
+				iSpeed = 7;
+			}else{
+				iSpeed = -7;
+			}
+			if (Math.abs((400-oBox1.offsetWidth)) < Math.abs(iSpeed)) {
+				//差值小于速度时直接到达目标值
+				oBox1.style.width = '400px';
+				clearInterval(oBox1.timer);
+			}else{
+				oBox1.style.width = oBox1.offsetWidth + iSpeed +'px';
+			}
+		},50);
+	}
+	oBox2.onmouseover = function(){
+		//每次点击时先清除定时器，以防多次点击开启多个定时器
+		clearInterval(oBox2.timer);
+		timer = setInterval(function(){
+			//定义动画移动速度
+			var iSpeed = 0;
+			if(oBox2.offsetHeight < 400){
+				iSpeed = 7;
+			}else{
+				iSpeed = -7;
+			}
+			if (Math.abs((400-oBox2.offsetHeight)) < Math.abs(iSpeed)) {
+				//差值小于速度时直接到达目标值
+				oBox2.style.height = '400px';
+				clearInterval(oBox2.timer);
+			}else{
+				oBox2.style.height = oBox2.offsetHeight + iSpeed +'px';
+			}
+		},50);
+	}
+	oBox3.onmouseover = function(){
+		clearInterval(oBox3.timer);
+		timer = setInterval(function(){
+			var number = parseFloat(getComputedStyle(oBox3,false)['opacity']);
+			number = number * 100;
+			var iSpeed = 0;
+			if(number < 20){
+				iSpeed = 5;
+			}else{
+				iSpeed = -5;
+			}
+			if (Math.abs(20-number) < Math.abs(iSpeed)) {
+				oBox3.style.opacity = '0.2';
+				clearInterval(oBox3.timer);
+			}else{
+				oBox3.style.opacity = (number + iSpeed)/100;
+			}	
+		},50);
+	}
+</script>
+<ml>

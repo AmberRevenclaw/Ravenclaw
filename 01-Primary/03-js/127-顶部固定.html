@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>127-顶部固定</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.nav{
+			width: 100%;
+			height: 100px;
+			background-color: #ccc;
+		}
+		.top{
+			position: fixed;
+			top: 0px;
+			left: 0px;
+			width: 100%;
+			height: 0px;
+			background-color: pink;
+		}
+		.content{
+			width: 100%;
+			height: 3000px;
+			background-color: #D8D8D8;
+		}
+	</style>
+</head>
+<body>
+	<div class="nav"></div>
+	<div class="top"></div>
+	<div class="content"></div>
+</body>
+<script src="js/util.js"></script>
+<script>
+	var oTop = document.querySelector('.top');
+	//及时关闭定时器，防止资源浪费
+	var isShow = false;
+	window.onscroll = function(){
+		// console.log(getScrollTop());
+		if(getScrollTop() > 200){
+			//动画只执行一次，避免开启多个定时器
+			if(!isShow){
+				// console.log(1);
+				animate(oTop,'height',100);
+				isShow = true;
+			}
+		}else{
+			if (isShow) {
+				// console.log(2);
+				animate(oTop,'height',0);
+				isShow = false;
+			}	
+		}
+		
+	}
+</script>
+</html>

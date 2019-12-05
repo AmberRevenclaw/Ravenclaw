@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>119-JS动画</title>
+	<title>1129-减速动画-速度正负和结束条件</title>
 	<style>
 		.box{
 			width: 1000px;
@@ -12,6 +12,7 @@
 		}
 		.son{
 			position: absolute;
+			left: 1500px;
 			width: 100px;
 			height: 100px;
 			background-color: pink;
@@ -36,21 +37,21 @@
 		clearInterval(timer);
 		timer = setInterval(function(){
 			//定义动画移动速度
-			var iSpeed = 0;
-			// console.log(timer);
-			//当未达到目标值时，速度为10；超过目标值时，反向靠近目标值
-			if(oBox.offsetLeft < 900){
-				iSpeed = 10;
+			var iSpeed = (900-oBox.offsetLeft)/10;
+			//当速度小于0时向下取整，当速度大于0时向上取整
+			/*if(iSpeed<0){
+				iSpeed = Math.floor(iSpeed);
 			}else{
-				iSpeed = -10;
-			}
-			//到达目标值时清除定时器
-			if (oBox.offsetLeft == 900) {
+				iSpeed = Math.ceil(iSpeed);
+			}*/
+			//简写
+			iSpeed > 0 ? iSpeed = Math.ceil(iSpeed) : iSpeed = Math.floor(iSpeed);
+			//到达目标值时,即速度为0时清除定时器
+			if (!iSpeed) {
 				clearInterval(timer);
 			}else{
 				oBox.style.left = oBox.offsetLeft + iSpeed +'px';
 			}
-			// oBox.style.left = oBox.offsetLeft + iSpeed +'px';	
 		},50);
 	}
 </script>
