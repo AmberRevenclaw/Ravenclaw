@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>03-左右键移动物体</title>
+	<style>
+		#box{
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			width: 200px;
+			height: 200px;
+			background: pink;
+		}
+	</style>
+</head>
+<body>
+	<div id="box"></div>
+</body>
+<script>
+	var oBox = document.getElementById('box');
+	document.onkeydown = function(ev){
+		//测试要控制的按键值为多少
+		console.log(ev.keyCode);
+		if(ev.keyCode == 37){
+			iSpeed = -10;
+			oBox.style.left = oBox.offsetLeft + iSpeed + 'px';
+		}else if(ev.keyCode == 38){
+			iSpeed = -10;
+			oBox.style.top = oBox.offsetTop + iSpeed + 'px';
+		}else if(ev.keyCode == 39){
+			iSpeed = 10;
+			oBox.style.left = oBox.offsetLeft + iSpeed + 'px';
+		}else if(ev.keyCode == 40){
+			iSpeed = 10;
+			oBox.style.top = oBox.offsetTop + iSpeed + 'px';
+		}
+	}
+</script>
+</html>

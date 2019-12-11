@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>04-回车+Ctrl提交</title>
+	<style>
+		#box{
+			width: 500px;
+			height: 200px;
+			margin: 100px auto;
+		}
+		ul{
+			text-align: left;
+			padding-inline-start: 0px;
+		}
+		li{
+			list-style: none;
+			line-height: 30px;
+			border-bottom:1px dashed #000;
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<input type="text" id="txt">
+		<input type="button" id='btn' value="提交">
+		<ul id="ul1">
+			<li>默认内容</li>
+		</ul>
+	</div>
+</body>
+<script>
+	var oTxt = document.getElementById('txt');
+	var oBtn = document.getElementById('btn');
+	var oUl = document.getElementById('ul1');
+	oBtn.onclick = function(){
+		var val = oTxt.value;
+		if(val = ' '){
+			alert('请输入内容');
+		}
+		var oLi = document.createElement('li');
+		oLi.innerHTML = val;
+		oTxt.value = '';
+		oUl.insertBefore(oLi,oUl.firstChild);
+	}
+	oTxt.onkeydown = function(ev){
+		console.log(ev.keyCode);
+		//回车键值为13
+		//ev.ctrlKey是判断是否按下ctrl键，返回值是true/false
+		if(ev.keyCode == 13 && ev.ctrlKey){
+			oBtn.onclick();
+		}
+	}
+</script>
+</html>

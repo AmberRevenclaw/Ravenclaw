@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>176-创建正则运算</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var string = 'abc ads afd';
+	//创建一个正则运算
+	var reg = new RegExp('a','g');
+	var reg2 =/a/g;
+	//将匹配到的字符替换为‘*’
+	console.log(string.replace(reg,'*'));
+	console.log(string.replace(reg2,'*'));
+</script>
+</html>

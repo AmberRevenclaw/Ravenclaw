@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>141-图标拖拽</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			position: absolute;
+			height: 300px;
+			width: 300px;
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<div id="box"></div>
+</body>
+<script>
+	var oDiv = document.getElementById('box');
+	oDiv.onmousedown = function(ev){
+		//保存鼠标与盒子的X\Y距离
+		var disY = ev.clientY - oDiv.offsetTop;
+		var disX = ev.clientX - oDiv.offsetLeft;
+		//克隆元素
+		var oClone = oDiv.cloneNode(true);
+		document.body.appendChild(oClone);
+		oClone.style.opacity = 0.5;
+		//点击盒子后移动盒子
+		//防止鼠标移出,移动事件添加给document
+		document.onmousemove = function(ev){
+			var l = ev.clientX - disX;
+			var t = ev.clientY - disY;
+			//限制在视口中移动
+			if(l<0){
+				l = 0;
+			}else if(l>window.innerWidth - oDiv.offsetWidth){
+				l = window.innerWidth - oDiv.offsetWidth;
+			}
+			if(t<0){
+				t = 0;
+			}else if(t>window.innerHeight - oDiv.offsetHeight){
+				t = window.innerHeight -  oDiv.offsetHeight;
+			}
+			//更改克隆对象的位置
+			oClone.style.left = l + 'px';
+			oClone.style.top = t + 'px';
+
+		}
+		//点击盒子后松开鼠标
+		document.onmouseup = function(ev){
+			//清除鼠标移动事件
+			document.onmousemove = null;
+			//将原元素移动到克隆物体位置上
+			oDiv.style.left = oClone.style.left;
+			oDiv.style.top = oClone.style.top;
+			//移除克隆对象
+			document.body.removeChild(oClone);
+			document.onmouseup = null;
+		}	
+	}
+</script>
+</html>

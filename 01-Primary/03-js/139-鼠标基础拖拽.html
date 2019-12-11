@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>139-鼠标基础拖拽</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			position: absolute;
+			height: 300px;
+			width: 300px;
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<div id="box"></div>
+</body>
+<script>
+	var oDiv = document.getElementById('box');
+	oDiv.onmousedown = function(ev){
+		//保存鼠标与盒子的X\Y距离
+		var disY = ev.clientY - oDiv.offsetTop;
+		var disX = ev.clientX - oDiv.offsetLeft;
+		//点击盒子后移动盒子
+		//防止鼠标移出,移动事件添加给document
+		document.onmousemove = function(ev){
+			var l = ev.clientX - disX;
+			var t = ev.clientY - disY;
+			if(l<0){
+				l = 0;
+			}else if(l>window.innerWidth - oDiv.offsetWidth){
+				l = window.innerWidth - oDiv.offsetWidth;
+			}
+			if(t<0){
+				t = 0;
+			}else if(t>window.innerHeight - oDiv.offsetHeight){
+				t = window.innerHeight -  oDiv.offsetHeight;
+			}
+			oDiv.style.left = l + 'px';
+			oDiv.style.top = t + 'px';
+
+		}
+		//点击盒子后松开鼠标
+		document.onmouseup = function(ev){
+			//清除鼠标移动事件
+			document.onmousemove = null;
+			document.onmouseup = null;
+		}	
+	}
+</script>
+</html>

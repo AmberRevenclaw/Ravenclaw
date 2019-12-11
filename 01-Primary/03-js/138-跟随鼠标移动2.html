@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>138-跟随鼠标移动2</title>
+	<style>
+		body{
+			width: 3000px;
+			height: 2000px;
+		}
+		div{
+			position: absolute;
+			width: 100px;
+			height: 100px;
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<div id="box"></div>
+	<div id="box"></div>
+	<div id="box"></div>
+	<div id="box"></div>
+	<div id="box"></div>
+	<div id="box"></div>
+	<div id="box"></div>
+	<div id="box"></div>
+	<div id="box"></div>
+</body>
+<script src="js/util.js"></script>
+<script>
+	var aDiv = document.getElementsByTagName('div');
+	window.addEventListener('mousemove',function(ev){
+		// console.log(ev.clientX,ev.clientY);
+		aDiv[0].style.top = getScrollTop() + ev.clientY + 'px';
+		aDiv[0].style.left = getScrollLeft() + ev.clientX + 'px';
+		for(var i = aDiv.length -1; i>0; i--){
+			// console.log(aDiv[i-1],aDiv[i-1].style.top);
+			aDiv[i].style.top = aDiv[i-1].offsetTop + 10 + 'px';
+			aDiv[i].style.left = aDiv[i-1].offsetLeft+ 10 + 'px';
+		}
+	},false)
+</script>
+</html>

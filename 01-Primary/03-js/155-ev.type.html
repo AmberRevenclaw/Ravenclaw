@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>154-ev.typy</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;}
+		#box{
+			width: 100px;
+			height: 100px;
+			background: red;
+		}
+	</style>
+</head>
+<body>
+	<div id="box"></div>
+</body>
+<script>
+	function hangdleBox(type){
+		if(type == 'mouseover'){
+			oBox.style.background = 'pink';
+		}else if(type == 'click'){
+			oBox.style.background = 'green';
+			oBox.style.width = '200px';
+		}
+	}
+	var oBox = document.getElementById('box');
+	oBox.onclick = function(ev){
+		console.log(ev.type);
+		hangdleBox(ev.type);
+		// this.style.background = 'green';
+	}
+	oBox.onmouseover = function(ev){
+		console.log(ev.type);
+		hangdleBox(ev.type);
+		// this.style.background = 'pink';
+	}
+</script>
+</html>

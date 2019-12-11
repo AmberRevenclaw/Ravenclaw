@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>140-父元素鼠标基础拖拽</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box{
+			position: absolute;
+			height: 200px;
+			width: 200px;
+			background-color: red;
+		}
+		#father{
+			position: relative;
+			margin: 50px auto;
+			height: 700px;
+			width: 700px;
+			background-color: #ccc;
+		}
+	</style>
+</head>
+<body>
+	<div id="father">
+		<div id="box"></div>
+	</div>
+</body>
+<script>
+	var oDiv = document.getElementById('box');
+	var oBox = document.getElementById('father');
+	oDiv.onmousedown = function(ev){
+		//保存鼠标与盒子的X\Y距离
+		var disY = ev.clientY - oDiv.offsetTop;
+		var disX = ev.clientX - oDiv.offsetLeft;
+		//点击盒子后移动盒子
+		//防止鼠标移出,移动事件添加给document
+		document.onmousemove = function(ev){
+			var l = ev.clientX - disX;
+			var t = ev.clientY - disY;
+			if(l<0){
+				l = 0;
+			}else if(l+10 > oBox.offsetWidth - oDiv.offsetWidth){
+				l = oBox.offsetWidth - oDiv.offsetWidth;
+			}
+			if(t<0){
+				t = 0;
+			}else if(t+10 >oBox.offsetHeight - oDiv.offsetHeight){
+				t = oBox.offsetHeight - oDiv.offsetHeight;
+			}
+			oDiv.style.left = l + 'px';
+			oDiv.style.top = t + 'px';
+
+		}
+		//点击盒子后松开鼠标
+		document.onmouseup = function(ev){
+			//清除鼠标移动事件
+			document.onmousemove = null;
+			document.onmouseup = null;
+		}	
+	}
+</script>
+</html>

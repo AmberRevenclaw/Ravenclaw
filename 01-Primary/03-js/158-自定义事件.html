@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>158-自定义事件</title>
+</head>
+<body>
+	
+</body>
+<script>
+	//创建事件对象
+	var newEvent = new Event('test');
+	//监听事件
+	document.body.addEventListener('test',function(){
+		console.log('test....');
+	},false);
+	//触发事件
+	document.body.dispatchEvent(newEvent);
+</script>
+</html>

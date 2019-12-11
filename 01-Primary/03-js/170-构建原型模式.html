@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>170-构建原型模式</title>
+</head>
+<body>
+	
+</body>
+<script>
+	function Person(){
+
+	}
+	console.log(Person.prototype);
+	Person.prototype.sayHi = function(){
+		console.log('hi');
+	}
+	var person1 = new Person('jackson');
+	console.log(person1);
+	person1.sayHi();
+	var person2 = new Person('roy');
+	console.log(person2);
+	/*var arr = new Array();
+	var arr2 = new Array();
+	arr.sort();
+	arr2.sort();*/
+</script>
+</html>

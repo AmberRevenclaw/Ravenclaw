@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>142-滚动条</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box{
+			position: absolute;
+			height: 50px;
+			width: 50px;
+			background-color: red;
+		}
+		#father{
+			position: relative;
+			margin: 50px auto;
+			height:50px;
+			width: 800px;
+			background-color: #ccc;
+		}
+		#content{
+			height: 100px;
+			width: 100px;
+			background-color: blue;
+		}
+	</style>
+</head>
+<body>
+	<div id="father">
+		<div id="box"></div>
+	</div>
+	<div id="content"></div>
+</body>
+<script>
+	var oDiv = document.getElementById('box');
+	var oBox = document.getElementById('father');
+	var oContent = document.getElementById('content');
+	oDiv.onmousedown = function(ev){
+		//保存鼠标与盒子的X\Y距离
+		var disX = ev.clientX - oDiv.offsetLeft;
+		//点击盒子后移动盒子
+		//防止鼠标移出,移动事件添加给document
+		document.onmousemove = function(ev){
+			var l = ev.clientX - disX;
+			if(l<0){
+				l = 0;
+			}else if(l+10 > oBox.offsetWidth - oDiv.offsetWidth){
+				l = oBox.offsetWidth - oDiv.offsetWidth;
+			}
+			oDiv.style.left = l + 'px';
+			//定义比例
+			//移动距离：最大移动距离
+			var scale = l/(oBox.offsetWidth - oDiv.offsetWidth);
+			// console.log(scale);
+			oContent.style.width = 500 * scale + 100 +'px';
+			oContent.style.height = 500 * scale + 100 +'px';
+		}
+		//点击盒子后松开鼠标
+		document.onmouseup = function(ev){
+			//清除鼠标移动事件
+			document.onmousemove = null;
+			document.onmouseup = null;
+		}	
+	}
+</script>
+</html>

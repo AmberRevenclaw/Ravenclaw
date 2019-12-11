@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>149-表单事件</title>
+</head>
+<body>
+	<form action="https:www.baidu.com">
+			<input type="text" id="txt" autocomplete="off">
+			<input type="submit" id="btn1" value="提交">
+			<input type="reset" value="重置" id="btn2">
+			<p id="msg"></p>
+	</form>
+</body>
+<script>
+	var oTxt = document.getElementById('txt');
+	var oSubmit = document.getElementById('btn1');
+	var oReset = document.getElementById('btn2');
+	var oMsg = document.getElementById('msg');
+	oTxt.onfocus = function(){
+		console.log('获取焦点');
+		oMsg.innerHTML = '请输入三到六位的用户名';
+		oMsg.style.color = 'green';
+	}
+	oTxt.onblur = function(){
+		// console.log('失去焦点');
+		var leg = oTxt.value.length;
+		// console.log(leg);
+		if(leg<3||leg>6){
+			oMsg.innerHTML = '输入错误';
+			oMsg.style.color = 'red';
+		}else{
+			oMsg.innerHTML = '输入正确';
+			oMsg.style.color = 'blue';
+		}
+	}
+	oTxt.onchange = function(){
+		console.log('页面内容改动');
+	}
+	oTxt.oninput = function(){
+		// console.log('每次输入检测');
+		var leg = oTxt.value.length;
+		// console.log(leg);
+		if(leg<3||leg>6){
+			oMsg.innerHTML = '输入错误';
+			oMsg.style.color = 'red';
+		}else{
+			oMsg.innerHTML = '输入正确';
+			oMsg.style.color = 'blue';
+		}
+	}
+</script>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>135-事件处理程序</title>
+</head>
+<body>
+	<input type="button" value="提交" id="btn1">
+	<input type="button" value="移出事件" id="btn2">
+</body>
+<script>
+	var oBtn1 = document.getElementById('btn1');
+	var oBtn2 = document.getElementById('btn2');
+	function sayhi(){
+		alert('hi');
+	}
+	function sayhallo(){
+		alert('hallo');
+	}
+	oBtn1.addEventListener('click',sayhi,false);
+	oBtn1.addEventListener('click',sayhallo,false);
+	oBtn1.addEventListener('click',function(){
+		alert(333);
+	},false);
+	oBtn2.onclick = function(){
+		oBtn1.removeEventListener('click',sayhi,false);
+		oBtn1.removeEventListener('click',sayhallo,false);
+		oBtn1.removeEventListener('click',function(){
+			alert(333);
+		},false);
+	}
+</script>
+</html>

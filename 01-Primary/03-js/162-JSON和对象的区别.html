@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>162-JSON和对象的区别</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var json = '{"name":"tom","age":18}';
+	//var json2 = "{'name':'tom','age':18}";//错误结果
+	var obj = {
+		name:"tom",
+		age:18,
+		"@":54,
+		sayHi:function(){
+			console.log('hi')
+		}
+	}
+	// console.log(obj.name)
+	// console.log(json.name)
+	console.log(obj);
+	console.log(json);
+	var objToJson = JSON.stringify(obj);
+	console.log(objToJson);
+	var jsonToJs = JSON.parse(json);
+	console.log(jsonToJs); 
+	//var jsonToJs2 = JSON.parse(json2);
+	
+	
+</script>
+</html>

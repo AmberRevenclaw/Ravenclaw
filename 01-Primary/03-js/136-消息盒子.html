@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>136-消息盒子</title>
+	<style>
+		div{
+			width: 100px;
+			height: 500px;
+			background-color: #ccc;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<input type="button" value="消息" id="btn">
+	<div id="box"></div>
+</body>
+<script>
+	var oBtn = document.getElementById('btn');
+	var oBox = document.getElementById('box');
+	oBtn.addEventListener('click',function(ev){
+		//阻止事件冒泡，使事件停留在该执行对象上
+		event.stopPropagation();
+		oBox.style.display = 'block';
+	},false);
+	oBox.addEventListener('click',function(ev){
+		//点击时阻止冒泡到上一级触发事件
+		event.stopPropagation();
+	})
+	window.addEventListener('click',function(){
+		oBox.style.display = 'none';
+	},false);
+</script>
+</html>

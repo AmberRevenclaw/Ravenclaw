@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>143-滚动拖动内容.html</title>
+	<style>
+		.box{
+			width: 500px;
+			height:600px;
+			border: 1px solid #000;
+			margin: 100px auto;
+		}
+		.content{
+			position: relative;
+			float: left;
+			width: 460px;
+			height: 600px;
+			line-height: 25px;
+			overflow: hidden;
+		}
+		.page{
+			position: absolute;
+		}
+		.father{
+			position: relative;
+			width: 40px;
+			height: 600px;
+			background-color: #ccc;
+			float: right;
+		}
+		.son{
+			position: absolute;
+			width: 40px;
+			height: 40px;
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="content">
+			<div class="page">
+				在明确了AR的发展方向后，Adobe逐步展开了在此方面的行动。Adobe先是展示了两款基于AR设计的无文本UI概念，随后又正式发行了AR制作工具Aero，并在MAX大会上展示了Dimension 3.0支持AR的新消息。Adobe XD提出无文本UI设计：Text-Free UI Kit for Adobe XD在此前体验多人开放世界VR游戏《故土》的时候，小编为游戏惊艳的画面和开放的世界而着迷。但与此同时，小编也发现《故土》这样的VR游戏存在一个问题：由于是针对PC/VR用户同时开发，《故土》的UI设计基本选择了传统网游所采用的文本为主的UI设计。这一UI在传统的2D显示器上问题不大，但在全景的VR环境中体验并不算佳。此外，过多文本的UI设计也较为影响阅读困难人群以及视障人群的用户体验。目前，世界文盲比例仍高达20%，这一受众群体很难与存在大量文本的UI交互。而对于视障群体而言，在文本不易于识别的情况下，有着高对比度和简单形状的图标能够提供情景上下文。语音界面UI但慢慢随着语音界面以及AR技术的发展，创建UI时文本已逐渐不再是必备的组件。语音界面允许用户通过语音命令与应用进行交互；AR体验也可以在消除潜在视觉干扰的同时添加有用的信息：通过图像和动画来提供清晰的指令，能帮助用户在不需要阅读的情况下与UI交流。为此， Adobe于10月31日提出了一种用以取代文本UI的设计方案：Text-Free UI Kit for Adobe XD。该方案由Cara Neel设计，利用了语音、图像和动画来为用户提供清晰的指令。移动导航应用程序PolarisText-Free UI Kit包含两个设计概念，两者均采用了语音界面和AR体验。首个概念是一款移动导航应用程序Polaris，允许用户通过语音命令和AR路标前往目的地；第二个概念则是一款虚拟助手ARtie，能够帮助用户识别不熟悉的对象和位置，并帮助用户解决日常生活中可能遇到的问题。图标和组件库Cara Neel还为其他AR设计者提供了一个由不同图标和组件组成的库，帮助设计者创建无文本的UI交互界面。Adobe推出无需掌握编程技巧的AR创作工具Aero11月5日，Adobe正式发行了旗下AR创作工具Adobe Aero。该工具允许设计师在AR环境中构建和分享沉浸式体验，并无需握任何编程技巧。与其他AR创作工具相比，Adobe Aero具备如下的功能。可视化创作：Aero能够提供直观且不牺牲质量的创作体验。用户可以使用可视化UI构建AR体验，而分步说明则将引导用户构建独特的AR场景；可交互动画：用户可以使用双手和设备将虚拟对象放置在现实空间中，并创造动画效果以及触发方式；可关联asset：Aero提供了数百种免费的入门asset，且支持广泛的2D/3D文件格式导入，包括矢量图形、Adobe Photoshop文件、OBJ、FBX、Collada、glTF等；发布与分享：用户可以直接通过Aero应用，将创建的体验发布或分享给其他人。Adobe发布3D设计工具Dimension 3.0更新，提供Aero AR支持Adobe于美国当地时间11月2日-11月6日举办的MAX大会上，正式发布了Dimension 3.0。在新版本的Dimension中，Adobe为其增加了照明控制功能、渲染和创建高质量图像的方法以及全新的AR工作流程可搭配Aero：在Dimension 3.0中，用户可以轻松地将Dimension项目发送至Adobe Aero中，方便用户在现实世界中查看、添加行为以及交互，并创建属于自己的AR体验；增加和定制多种光源：Dimension3.0现在允许用户添加并控制多个定向光源。用户可以自由设置光源的方向、大小、颜色及强度，从而精确地控制高光位置和整体照明色调；Render Preview（渲染预览）：用户现在可以在应用上实时查看纹理设计、光线反射等详细渲染信息，以减少等待渲染改动所花费的时间，为用户腾出时间修改；GPU Rendering（Beta）：Dimension3.0采用了能够将渲染技术提高9倍的NVIDIA RTX光追技术，目前仅以Beta形式支持Windows系统。R为Adobe带来市场营销机遇及设计潜能对于Adobe而言，AR作为一种全新的媒介，为其带来了市场营销机遇以及沉浸式的设计潜能。Adobe展示的AR购物原型AR技术带来一个全新的数字画布，允许商家有足够的深度来叙述独特的故事，从而为消费者提供足够的直观性。今年3月，Adobe向CNET（美国CNET Networks国际媒体）展示了一款用于网购的AR购物原型，希望能为消费者提供更近于实体店的体验。而在艺术方面，Adobe在Aero的早期研发阶段便一直在与艺术工作者进行合作，从而使得开发团队在一开始便了解到创意表达的潜能。如经验丰富的2D设计师Dan Mumford在入驻“Adobe AR Residency”计划期间，便在保持原有风格的前提下，将作品分割为一个个Photoshop图层，创建了AR海报隧道，让体验者能“走入”其中，并“亲身”感受其作品的独特深度。不得不说在广告营销和艺术创作方面，AR这一全新媒介确实很有优势，但如果没有足够的内容来丰富这一媒介，AR很难得到发展。为此，Adobe也正在为此努力。通过展示基于AR的无文本设计UI概念，为创作者指明思路；同时提供优质低门槛的AR创作工具Aero，并通过与自己原本的设计工具联系，构建一套工具生态。
+			</div>
+		</div>
+		<div class="father">
+			<div class="son"></div>
+		</div>
+	</div>
+</body>
+<script>
+	var oBox = document.querySelector('.box');
+	var oSon = document.querySelector('.son');
+	var oFather = document.querySelector('.father');
+	var oContent = document.querySelector('.content');
+	console.log(oContent);
+	var oPage = document.querySelector('.page');
+	var t = 0;
+	function handwheel(){
+		if(t<0){
+			t = 0;
+		}else if(t+10 > oFather.offsetHeight - oSon.offsetHeight){
+			t = oFather.offsetHeight - oSon.offsetHeight;
+		}
+		oSon.style.top = t + 'px';
+		//定义比例
+		var scale = t/(oFather.offsetHeight - oSon.offsetHeight);
+		oPage.style.top = -(oPage.offsetHeight - oContent.offsetHeight) * scale + 'px';
+	}
+	oSon.onmousedown = function(ev){
+		//保存鼠标与盒子的X\Y距离
+		var disY = ev.clientY - oSon.offsetTop;
+		//点击盒子后移动盒子
+		//防止鼠标移出,移动事件添加给document
+		document.onmousemove = function(ev){
+			t = ev.clientY - disY;
+			handwheel();
+		}
+		//点击盒子后松开鼠标
+		document.onmouseup = function(ev){
+			//清除鼠标移动事件
+			document.onmousemove = null;
+			document.onmouseup = null;
+		}	
+	}
+	oBox.onmousewheel = function(ev){
+		// console.log(ev.wheelDelta);
+		if(ev.wheelDelta > 0){//向上滚动
+			t-=10;
+		}else{//向下
+			t+=10;
+		}
+		// console.log(t);
+		handwheel();
+	}
+</script>
+</html>
