@@ -9,5 +9,14 @@
 </body>
 <script>
 	var str = 'adhgdiufgauujmsmdjduewdafwef5491玊尔哈哈哈哈哈';
+	var reg1 = /a|b|c|d|e/g;
+	var reg2 = /[a-z]/g;
+	var reg3 = /[a-z0-9]/g;
+	var reg4 = /[\u4e00-\u9fa5]/g;
+	var reg5 = /[a-z0-9|\u4e00-\u9fa5]/g;
+	console.log(str.replace(reg1,'*'));
+	console.log(str.replace(reg2,'*'));
+	console.log(str.replace(reg3,'*'));
+	console.log(str.replace(reg4,'*'));
 </script>
 </html>
