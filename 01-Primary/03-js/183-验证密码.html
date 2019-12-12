@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>183-验证密码</title>
+</head>
+<body>
+	<input type="text" id="txt">
+	<input type="button" value="提交" id="btn">
+</body>
+<script>
+	var oTxt = document.getElementById('txt');
+	var oBtn = document.getElementById('btn');
+	oBtn.onclick = function(){
+		var val = oTxt.value;
+		//以字母开头,长度在6~12之间,只能包含字母、数字和下划线
+		var reg = /^[a-zA-Z]\w{5,11}$/;
+		if(reg.test(val)){
+			alert('合法');
+		}else{
+			alert('不合法');
+		}
+	}
+</script>
+</html>

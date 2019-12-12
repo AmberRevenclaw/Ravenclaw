@@ -2,11 +2,21 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>180-过滤HTML标签</title>
+	<title>180-过滤html标签.html</title>
 </head>
 <body>
-	<input type="teasure" id='box1'>
-	<input type="button" id="btn">
-	<input type="teasure" id='box2'>
+	<textarea  id="txt1" cols="30" rows="10"></textarea>
+	<button id="btn">过滤</button>
+	<textarea  id="txt2" cols="30" rows="10"></textarea>
+	<a>
 </body>
+<script>
+	var oTxt1 = document.getElementById('txt1');
+	var oTxt2 = document.getElementById('txt2');
+	var oBtn = document.getElementById('btn');
+	oBtn.onclick = function(){
+		var reg = /<[^<>]+>/g;
+		oTxt2.value = oTxt1.value.replace(reg,'*');
+	}
+</script>
 </html>
