@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>186-邮箱校验</title>
+</head>
+<body>
+	<input type="text" id="txt">
+	<input type="button" value="提交" id="btn">
+</body>
+<script>
+	var oTxt = document.getElementById('txt');
+	var oBtn = document.getElementById('btn');
+	oBtn.onclick = function(){
+		var val = oTxt.value;
+		var reg = /^\w+@\w+\.[a-z]{2,5}$/;
+		if(reg.test(val)){
+			console.log('正确');
+		}else{
+			console.log('错误');
+		}
+	}
+</script>
+</html>
