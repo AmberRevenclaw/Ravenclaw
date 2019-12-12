@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>189-前瞻</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var str = 'a1x!f2jjjjjjj4';
+	var reg = /[a-z](?=\d)/g;
+	var reg2 = /[a-z](?!\d)/g;
+	console.log(str);
+	console.log(str.replace(reg,'*'));
+	console.log(str.replace(reg2,'*'));
+</script>
+</html>
